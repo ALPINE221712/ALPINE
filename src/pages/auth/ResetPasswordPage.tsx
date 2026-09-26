@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useInventory } from '../../store/inventoryStore';
 import { Icon } from '../../components/common/Icon';
+import { authApi } from '../../lib/api';
 
 export const ResetPasswordPage: React.FC = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const { addToast } = useInventory();
+
+  const email = searchParams.get('email') || '';
+  const otp = searchParams.get('otp') || '';
 
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
 
@@ -27,7 +32,12 @@ export const ResetPasswordPage: React.FC = () => {
     }
 
     setIsLoading(true);
-    setTimeout(() => {
+    try {
+      await authApi.resetPassword({
+        email,
+        otp,
+        new_password: password,
+      });
       setIsLoading(false);
       addToast({
         type: 'success',
@@ -35,7 +45,10 @@ export const ResetPasswordPage: React.FC = () => {
         message: 'Your account password has been successfully reset. Please sign in.',
       });
       navigate('/login');
-    }, 400);
+    } catch (err: any) {
+      setIsLoading(false);
+      setError(err.message || 'Failed to reset password. Please request a new OTP.');
+    }
   };
 
   return (

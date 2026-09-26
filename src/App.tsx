@@ -31,7 +31,20 @@ import { CommandPalette } from './components/search/CommandPalette';
 import { ToastContainer } from './components/common/ToastContainer';
 
 export const App: React.FC = () => {
-  const { isAuthenticated } = useInventory();
+  const { isAuthenticated, isAuthLoading } = useInventory();
+
+  if (isAuthLoading) {
+    return (
+      <div className="min-h-screen bg-surface-container-low flex flex-col justify-center items-center select-none">
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-8 h-8 rounded-full border-2 border-primary border-t-transparent animate-spin" />
+          <span className="font-mono text-xs text-outline tracking-wider uppercase font-semibold">
+            Connecting to StockSense Engine...
+          </span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>

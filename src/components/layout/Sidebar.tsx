@@ -21,6 +21,8 @@ export const Sidebar: React.FC = () => {
     }`;
 
   const currentWh = warehouses.find((w) => w.code === selectedWarehouseCode) || warehouses[0];
+  const whCode = currentWh?.code || selectedWarehouseCode || 'WH-01';
+  const whName = currentWh?.name ? currentWh.name.split('(')[0].trim() : 'Active Facility';
 
   return (
     <aside className="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest border-r border-outline-variant z-40 flex flex-col justify-between select-none">
@@ -43,11 +45,11 @@ export const Sidebar: React.FC = () => {
             <div className="flex items-center gap-1.5 min-w-0">
               <Icon name="warehouse" className="text-sm text-primary" />
               <span className="font-label-md text-label-md text-on-surface font-semibold truncate">
-                {currentWh.code}
+                {whCode}
               </span>
             </div>
             <span className="font-label-sm text-label-sm bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded font-medium truncate max-w-[120px]">
-              {currentWh.name.split('(')[0].trim()}
+              {whName}
             </span>
           </div>
         </div>

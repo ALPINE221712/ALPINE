@@ -50,7 +50,7 @@ export const LoginPage: React.FC = () => {
     return true;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!validateForm()) return;
@@ -58,20 +58,17 @@ export const LoginPage: React.FC = () => {
     setIsLoading(true);
     setError('');
 
-    // Simulate mock authentication verification
-    setTimeout(() => {
-      const success = login(email.trim(), password);
-      setIsLoading(false);
+    const res = await login(email.trim(), password);
+    setIsLoading(false);
 
-      if (success) {
-        setIsSuccess(true);
-        setTimeout(() => {
-          navigate('/dashboard', { replace: true });
-        }, 400);
-      } else {
-        setError('Authentication failed. Please verify your credentials or contact facility lead.');
-      }
-    }, 500);
+    if (res.success) {
+      setIsSuccess(true);
+      setTimeout(() => {
+        navigate('/dashboard', { replace: true });
+      }, 200);
+    } else {
+      setError(res.message || 'Authentication failed. Please verify your credentials or contact facility lead.');
+    }
   };
 
   const handleFillDemo = () => {

@@ -63,15 +63,29 @@ export const AdjustmentsPage: React.FC = () => {
     return adjustments.find((a) => a.id === selectedAdjId) || filteredAdjustments[0] || adjustments[0];
   }, [adjustments, selectedAdjId, filteredAdjustments]);
 
+  const [isApplying, setIsApplying] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   // Apply Adjustment
-  const handleApply = (id: string) => {
-    const res = applyAdjustment(id);
-    if (!res.success) {
+  const handleApply = async (id: string) => {
+    try {
+      setIsApplying(true);
+      const res = await applyAdjustment(id);
+      if (!res.success) {
+        addToast({
+          type: 'error',
+          title: 'Adjustment Failed',
+          message: res.message,
+        });
+      }
+    } catch (err: any) {
       addToast({
         type: 'error',
         title: 'Adjustment Failed',
-        message: res.message,
+        message: err.message || 'Failed to apply adjustment.',
       });
+    } finally {
+      setIsApplying(false);
     }
   };
 
@@ -86,7 +100,7 @@ export const AdjustmentsPage: React.FC = () => {
   }, [modalProd, physicalCountInput]);
 
   // Handle Create Adjustment
-  const handleCreateSubmit = (e: React.FormEvent) => {
+  const handleCreateSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!modalProd) return;
 
@@ -106,16 +120,25 @@ export const AdjustmentsPage: React.FC = () => {
 
     const wh = warehouses.find((w) => w.code === newWarehouse);
 
-    const created = createAdjustment({
-      warehouseCode: newWarehouse,
-      warehouseName: wh ? `${wh.code} ${wh.name}` : newWarehouse,
-      reason: newReason,
-      operator: user?.name || 'Marcus Vance',
-      items: [item],
-    });
+    try {
+      setIsSubmitting(true);
+      const created = await createAdjustment({
+        warehouseCode: newWarehouse,
+        warehouseName: wh ? `${wh.code} ${wh.name}` : newWarehouse,
+        reason: newReason,
+        operator: user?.name || 'Marcus Vance',
+        items: [item],
+      });
 
-    setIsNewAdjModalOpen(false);
-    setSelectedAdjId(created.id);
+      setIsNewAdjModalOpen(false);
+      if (created?.id) {
+        setSelectedAdjId(created.id);
+      }
+    } catch (err: any) {
+      addToast({ type: 'error', title: 'Error', message: err.message || 'Failed to create adjustment.' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Compute stats
@@ -653,11 +676,12 @@ export const AdjustmentsPage: React.FC = () => {
                   {selectedAdj.status !== 'Validated' ? (
                     <button
                       onClick={() => handleApply(selectedAdj.id)}
-                      className="h-10 w-full rounded bg-primary-container hover:bg-primary text-on-primary font-title-sm text-title-sm flex items-center justify-center gap-1.5 shadow-sm transition-colors"
+                      disabled={isApplying}
+                      className="h-10 w-full rounded bg-primary-container hover:bg-primary disabled:opacity-50 disabled:cursor-not-allowed text-on-primary font-title-sm text-title-sm flex items-center justify-center gap-1.5 shadow-sm transition-colors"
                       type="button"
                     >
-                      <Icon name="check_circle" className="text-base" />
-                      <span>Apply Adjustment &amp; Update Stock</span>
+                      <Icon name={isApplying ? "sync" : "check_circle"} className={`text-base ${isApplying ? "animate-spin" : ""}`} />
+                      <span>{isApplying ? "Applying Adjustment..." : "Apply Adjustment & Update Stock"}</span>
                     </button>
                   ) : (
                     <div className="h-10 w-full rounded bg-emerald-100 text-tertiary font-title-sm text-title-sm flex items-center justify-center gap-1.5 border border-emerald-300">
@@ -797,9 +821,11 @@ export const AdjustmentsPage: React.FC = () => {
             </button>
             <button
               type="submit"
-              className="h-8 px-4 rounded bg-primary text-on-primary hover:bg-primary/90 font-title-sm text-title-sm transition-colors shadow-sm"
+              disabled={isSubmitting}
+              className="h-8 px-4 rounded bg-primary text-on-primary hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed font-title-sm text-title-sm transition-colors shadow-sm flex items-center gap-1.5"
             >
-              Submit Adjustment Session
+              {isSubmitting && <Icon name="sync" className="text-sm animate-spin" />}
+              <span>{isSubmitting ? 'Submitting...' : 'Submit Adjustment Session'}</span>
             </button>
           </div>
         </form>

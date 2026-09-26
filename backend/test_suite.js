@@ -459,6 +459,39 @@ async function runTests() {
   });
   assert(deleteRefProd.status === 400, 'Deleting product with active inventory prevented (400 Bad Request)');
 
+  // -------------------------------------------------------------------------
+  // 12b. Phase 4: Operational Endpoints Authentication Hardening
+  // -------------------------------------------------------------------------
+  console.log('\n--- 12b. Security Hardening: Protected Operational GET Endpoints ---');
+
+  // 1. Receipts GET protection
+  const unauthGetReceipts = await request('/receipts');
+  assert(unauthGetReceipts.status === 401, 'Unauthenticated GET /api/receipts rejected with 401 Unauthorized');
+
+  const authGetReceipts = await request('/receipts', { cookie: managerCookie });
+  assert(authGetReceipts.status === 200, 'Authenticated GET /api/receipts succeeds with 200 OK');
+
+  // 2. Deliveries GET protection
+  const unauthGetDeliveries = await request('/deliveries');
+  assert(unauthGetDeliveries.status === 401, 'Unauthenticated GET /api/deliveries rejected with 401 Unauthorized');
+
+  const authGetDeliveries = await request('/deliveries', { cookie: managerCookie });
+  assert(authGetDeliveries.status === 200, 'Authenticated GET /api/deliveries succeeds with 200 OK');
+
+  // 3. Transfers GET protection
+  const unauthGetTransfers = await request('/transfers');
+  assert(unauthGetTransfers.status === 401, 'Unauthenticated GET /api/transfers rejected with 401 Unauthorized');
+
+  const authGetTransfers = await request('/transfers', { cookie: managerCookie });
+  assert(authGetTransfers.status === 200, 'Authenticated GET /api/transfers succeeds with 200 OK');
+
+  // 4. Adjustments GET protection
+  const unauthGetAdjustments = await request('/adjustments');
+  assert(unauthGetAdjustments.status === 401, 'Unauthenticated GET /api/adjustments rejected with 401 Unauthorized');
+
+  const authGetAdjustments = await request('/adjustments', { cookie: managerCookie });
+  assert(authGetAdjustments.status === 200, 'Authenticated GET /api/adjustments succeeds with 200 OK');
+
   // =========================================================================
   // PHASE 3: REAL INVENTORY TRANSACTION ENGINE + IMMUTABLE STOCK LEDGER
   // =========================================================================

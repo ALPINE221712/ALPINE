@@ -193,6 +193,7 @@ export interface Transfer {
   items: TransferItem[];
   totalUnits?: number;
   notes?: string;
+  reason?: string;
   priority: 'Normal' | 'High' | 'Urgent';
   transferType: 'Intra-Warehouse' | 'Inter-Facility';
   vehicleMethod?: string;

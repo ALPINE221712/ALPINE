@@ -95,15 +95,19 @@ export const ReceiptsPage: React.FC = () => {
     ],
   });
 
-  const handleValidate = () => {
-    if (!selectedReceipt) return;
-    const res = validateReceipt(selectedReceipt.id);
+  const [isValidating, setIsValidating] = useState(false);
+
+  const handleValidate = async () => {
+    if (!selectedReceipt || isValidating) return;
+    setIsValidating(true);
+    const res = await validateReceipt(selectedReceipt.id);
+    setIsValidating(false);
     if (!res.success) {
       addToast({ type: 'warning', title: 'Action Warning', message: res.message });
     }
   };
 
-  const handleCreateReceiptSubmit = (e: React.FormEvent) => {
+  const handleCreateReceiptSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const lineItems: ReceiptItem[] = newPoForm.items.map((it, idx) => {
       const prod = products.find((p) => p.id === it.productId) || products[0];
@@ -122,7 +126,7 @@ export const ReceiptsPage: React.FC = () => {
 
     const totalUnits = lineItems.reduce((acc, it) => acc + it.expectedQty, 0);
 
-    const created = createReceipt({
+    const created = await createReceipt({
       poNumber: newPoForm.poNumber,
       supplier: newPoForm.supplier,
       carrier: newPoForm.carrier,
@@ -562,10 +566,11 @@ export const ReceiptsPage: React.FC = () => {
               {selectedReceipt.status !== 'Done' && (
                 <button
                   onClick={handleValidate}
-                  className="h-9 px-4 bg-primary-container hover:bg-primary text-on-primary font-title-sm text-title-sm rounded shadow-sm flex items-center gap-1.5 transition-colors"
+                  disabled={isValidating}
+                  className="h-9 px-4 bg-primary-container hover:bg-primary text-on-primary font-title-sm text-title-sm rounded shadow-sm flex items-center gap-1.5 transition-colors disabled:opacity-50"
                 >
-                  <Icon name="check_circle" className="text-base" />
-                  <span>Approve &amp; Putaway All Lines</span>
+                  <Icon name={isValidating ? 'sync' : 'check_circle'} className={`text-base ${isValidating ? 'animate-spin' : ''}`} />
+                  <span>{isValidating ? 'Validating...' : 'Approve & Putaway All Lines'}</span>
                 </button>
               )}
             </div>

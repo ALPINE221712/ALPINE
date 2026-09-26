@@ -3,13 +3,21 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useInventory } from '../../store/inventoryStore';
 import { Icon } from '../../components/common/Icon';
 
+import { authApi } from '../../lib/api';
+
 export const VerifyOtpPage: React.FC = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { addToast } = useInventory();
   const email = searchParams.get('email') || 'operator@stocksense.corp';
+  const initialDevOtp = searchParams.get('dev_otp');
 
-  const [otp, setOtp] = useState(['', '', '', '', '', '']);
+  const [otp, setOtp] = useState(() => {
+    if (initialDevOtp && initialDevOtp.length === 6) {
+      return initialDevOtp.split('');
+    }
+    return ['', '', '', '', '', ''];
+  });
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
@@ -33,7 +41,7 @@ export const VerifyOtpPage: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const code = otp.join('');
     if (code.length < 6) {
@@ -42,15 +50,34 @@ export const VerifyOtpPage: React.FC = () => {
     }
 
     setIsLoading(true);
-    setTimeout(() => {
+    setError('');
+    try {
+      await authApi.verifyOtp(email, code);
       setIsLoading(false);
       addToast({
         type: 'success',
         title: 'Identity Confirmed',
         message: 'OTP verified. You may now define your new password.',
       });
-      navigate(`/reset-password?email=${encodeURIComponent(email)}`);
-    }, 400);
+      navigate(`/reset-password?email=${encodeURIComponent(email)}&otp=${encodeURIComponent(code)}`);
+    } catch (err: any) {
+      setIsLoading(false);
+      setError(err.message || 'Invalid or expired verification code.');
+    }
+  };
+
+  const handleResend = async () => {
+    try {
+      const res = await authApi.forgotPassword(email);
+      if (res?.dev_otp) {
+        setOtp(res.dev_otp.split(''));
+        addToast({ type: 'info', title: 'Code Refreshed', message: `Development OTP generated: ${res.dev_otp}` });
+      } else {
+        addToast({ type: 'info', title: 'Code Sent', message: `A new OTP has been dispatched to ${email}.` });
+      }
+    } catch (err: any) {
+      setError(err.message || 'Failed to resend verification code.');
+    }
   };
 
   return (
@@ -106,13 +133,10 @@ export const VerifyOtpPage: React.FC = () => {
         <span>Didn't receive the code?</span>
         <button
           type="button"
-          onClick={() => {
-            setOtp(['1', '2', '3', '4', '5', '6']);
-            addToast({ type: 'info', title: 'Code Refreshed', message: 'Demo OTP prefilled: 123456' });
-          }}
+          onClick={handleResend}
           className="text-primary font-semibold hover:underline"
         >
-          Resend OTP (Demo: 123456)
+          Resend Verification Code
         </button>
       </div>
     </div>

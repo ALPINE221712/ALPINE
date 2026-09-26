@@ -95,27 +95,53 @@ export const ProductsPage: React.FC = () => {
     return movements.filter((m) => m.productId === selectedProduct.id || m.sku === selectedProduct.sku);
   }, [movements, selectedProduct]);
 
-  const handleCreateProduct = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleCreateProduct = async (e: React.FormEvent) => {
     e.preventDefault();
-    const created = createProduct({
-      ...formData,
-      status: 'Available',
-    });
-    setIsNewProductModalOpen(false);
-    setSelectedProductId(created.id);
+    try {
+      setIsSubmitting(true);
+      const created = await createProduct({
+        ...formData,
+        status: 'Available',
+      });
+      setIsNewProductModalOpen(false);
+      if (created?.id) {
+        setSelectedProductId(created.id);
+      }
+    } catch (err: any) {
+      addToast({
+        type: 'error',
+        title: 'Product Creation Failed',
+        message: err.message || 'Failed to create product.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const handleUpdateProduct = (e: React.FormEvent) => {
+  const handleUpdateProduct = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedProduct) return;
-    updateProduct(selectedProduct.id, {
-      reorderPoint: formData.reorderPoint,
-      maxCapacity: formData.maxCapacity,
-      unitCost: formData.unitCost,
-      primaryLocation: formData.primaryLocation,
-      vendorName: formData.vendorName,
-    });
-    setIsEditModalOpen(false);
+    try {
+      setIsSubmitting(true);
+      await updateProduct(selectedProduct.id, {
+        reorderPoint: formData.reorderPoint,
+        maxCapacity: formData.maxCapacity,
+        unitCost: formData.unitCost,
+        primaryLocation: formData.primaryLocation,
+        vendorName: formData.vendorName,
+      });
+      setIsEditModalOpen(false);
+    } catch (err: any) {
+      addToast({
+        type: 'error',
+        title: 'Product Update Failed',
+        message: err.message || 'Failed to update product.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -861,10 +887,11 @@ export const ProductsPage: React.FC = () => {
             </button>
             <button
               type="submit"
-              className="h-8 px-4 bg-primary-container hover:bg-primary text-on-primary font-title-sm text-title-sm rounded shadow-sm flex items-center gap-1.5"
+              disabled={isSubmitting}
+              className="h-8 px-4 bg-primary-container hover:bg-primary disabled:opacity-50 disabled:cursor-not-allowed text-on-primary font-title-sm text-title-sm rounded shadow-sm flex items-center gap-1.5"
             >
-              <Icon name="check" className="text-sm" />
-              <span>Save &amp; Index Product</span>
+              <Icon name={isSubmitting ? "sync" : "check"} className={`text-sm ${isSubmitting ? "animate-spin" : ""}`} />
+              <span>{isSubmitting ? "Saving..." : "Save & Index Product"}</span>
             </button>
           </div>
         </form>
@@ -951,10 +978,11 @@ export const ProductsPage: React.FC = () => {
             </button>
             <button
               type="submit"
-              className="h-8 px-4 bg-primary-container hover:bg-primary text-on-primary font-title-sm text-title-sm rounded shadow-sm flex items-center gap-1.5"
+              disabled={isSubmitting}
+              className="h-8 px-4 bg-primary-container hover:bg-primary disabled:opacity-50 disabled:cursor-not-allowed text-on-primary font-title-sm text-title-sm rounded shadow-sm flex items-center gap-1.5"
             >
-              <Icon name="save" className="text-sm" />
-              <span>Update Specifications</span>
+              <Icon name={isSubmitting ? "sync" : "save"} className={`text-sm ${isSubmitting ? "animate-spin" : ""}`} />
+              <span>{isSubmitting ? "Updating..." : "Update Specifications"}</span>
             </button>
           </div>
         </form>

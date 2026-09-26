@@ -66,25 +66,39 @@ export const TransfersPage: React.FC = () => {
     });
   }, [transfers, activeTab, searchQuery, fromFacility, toFacility]);
 
+  const [isCompleting, setIsCompleting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   // Selected Transfer
   const selectedTransfer = useMemo(() => {
     return transfers.find((t) => t.id === selectedTransferId) || filteredTransfers[0] || transfers[0];
   }, [transfers, selectedTransferId, filteredTransfers]);
 
   // Handle Complete Transfer
-  const handleComplete = (id: string) => {
-    const res = completeTransfer(id);
-    if (!res.success) {
+  const handleComplete = async (id: string) => {
+    try {
+      setIsCompleting(true);
+      const res = await completeTransfer(id);
+      if (!res.success) {
+        addToast({
+          type: 'error',
+          title: 'Transfer Failed',
+          message: res.message,
+        });
+      }
+    } catch (err: any) {
       addToast({
         type: 'error',
         title: 'Transfer Failed',
-        message: res.message,
+        message: err.message || 'Failed to complete transfer.',
       });
+    } finally {
+      setIsCompleting(false);
     }
   };
 
   // Handle Create Transfer Submit
-  const handleCreateSubmit = (e: React.FormEvent) => {
+  const handleCreateSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const prod = products.find((p) => p.id === formData.productId);
     if (!prod) {
@@ -109,19 +123,28 @@ export const TransfersPage: React.FC = () => {
       status: 'Pending',
     };
 
-    const newTransfer = createTransfer({
-      sourceLocation: `${formData.sourceWarehouse} (${formData.sourceLocation})`,
-      destinationLocation: `${formData.destinationWarehouse} (${formData.destinationLocation})`,
-      transferType: formData.transferType,
-      priority: formData.priority,
-      items: [item],
-      vehicleMethod: formData.vehicleMethod,
-      assignedHandler: formData.assignedHandler,
-      notes: formData.notes,
-    });
+    try {
+      setIsSubmitting(true);
+      const newTransfer = await createTransfer({
+        sourceLocation: `${formData.sourceWarehouse} (${formData.sourceLocation})`,
+        destinationLocation: `${formData.destinationWarehouse} (${formData.destinationLocation})`,
+        transferType: formData.transferType,
+        priority: formData.priority,
+        items: [item],
+        vehicleMethod: formData.vehicleMethod,
+        assignedHandler: formData.assignedHandler,
+        notes: formData.notes,
+      });
 
-    setIsNewTransferModalOpen(false);
-    setSelectedTransferId(newTransfer.id);
+      setIsNewTransferModalOpen(false);
+      if (newTransfer?.id) {
+        setSelectedTransferId(newTransfer.id);
+      }
+    } catch (err: any) {
+      addToast({ type: 'error', title: 'Error', message: err.message || 'Failed to create transfer.' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // KPIs
@@ -692,11 +715,12 @@ export const TransfersPage: React.FC = () => {
               {selectedTransfer.status !== 'Completed' ? (
                 <button
                   onClick={() => handleComplete(selectedTransfer.id)}
-                  className="w-full h-10 px-4 rounded bg-primary hover:bg-primary/90 text-on-primary font-title-md text-title-md flex items-center justify-center gap-2 transition-colors shadow-sm"
+                  disabled={isCompleting}
+                  className="w-full h-10 px-4 rounded bg-primary hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed text-on-primary font-title-md text-title-md flex items-center justify-center gap-2 transition-colors shadow-sm"
                   type="button"
                 >
-                  <Icon name="check_circle" className="text-base" />
-                  <span>Validate Transfer &amp; Update Bin Locations</span>
+                  <Icon name={isCompleting ? "sync" : "check_circle"} className={`text-base ${isCompleting ? "animate-spin" : ""}`} />
+                  <span>{isCompleting ? "Validating Transfer..." : "Validate Transfer & Update Bin Locations"}</span>
                 </button>
               ) : (
                 <div className="w-full h-10 px-4 rounded bg-emerald-100 text-tertiary font-title-md text-title-md flex items-center justify-center gap-2 border border-emerald-300">
@@ -883,9 +907,11 @@ export const TransfersPage: React.FC = () => {
             </button>
             <button
               type="submit"
-              className="h-8 px-4 rounded bg-primary text-on-primary hover:bg-primary/90 font-title-sm text-title-sm transition-colors shadow-sm"
+              disabled={isSubmitting}
+              className="h-8 px-4 rounded bg-primary text-on-primary hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed font-title-sm text-title-sm transition-colors shadow-sm flex items-center gap-1.5"
             >
-              Schedule Transfer Order
+              {isSubmitting && <Icon name="sync" className="text-sm animate-spin" />}
+              <span>{isSubmitting ? 'Scheduling...' : 'Schedule Transfer Order'}</span>
             </button>
           </div>
         </form>

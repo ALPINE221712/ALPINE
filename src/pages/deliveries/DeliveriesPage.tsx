@@ -98,14 +98,18 @@ export const DeliveriesPage: React.FC = () => {
     ],
   });
 
-  const handlePick = () => {
+  const [isDispatching, setIsDispatching] = useState(false);
+
+  const handlePick = async () => {
     if (!selectedDelivery) return;
-    pickDelivery(selectedDelivery.id);
+    await pickDelivery(selectedDelivery.id);
   };
 
-  const handleDispatch = () => {
-    if (!selectedDelivery) return;
-    const res = dispatchDelivery(selectedDelivery.id);
+  const handleDispatch = async () => {
+    if (!selectedDelivery || isDispatching) return;
+    setIsDispatching(true);
+    const res = await dispatchDelivery(selectedDelivery.id);
+    setIsDispatching(false);
     if (!res.success) {
       addToast({
         type: 'error',
@@ -115,7 +119,7 @@ export const DeliveriesPage: React.FC = () => {
     }
   };
 
-  const handleCreateDeliverySubmit = (e: React.FormEvent) => {
+  const handleCreateDeliverySubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const lineItems: DeliveryItem[] = newOrderForm.items.map((it, idx) => {
       const prod = products.find((p) => p.id === it.productId) || products[0];
@@ -134,7 +138,7 @@ export const DeliveriesPage: React.FC = () => {
 
     const totalUnits = lineItems.reduce((acc, it) => acc + it.requestedQty, 0);
 
-    const created = createDelivery({
+    const created = await createDelivery({
       soNumber: newOrderForm.soNumber,
       customerName: newOrderForm.customerName,
       deliveryAddress: newOrderForm.deliveryAddress,
@@ -534,7 +538,7 @@ export const DeliveriesPage: React.FC = () => {
 
                   <button
                     onClick={handleDispatch}
-                    disabled={dispatchGuardIssues.length > 0}
+                    disabled={isDispatching || dispatchGuardIssues.length > 0}
                     className="h-9 px-4 bg-primary-container hover:bg-primary text-on-primary font-title-sm text-title-sm rounded shadow-sm flex items-center gap-1.5 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                     title={
                       dispatchGuardIssues.length > 0
@@ -542,8 +546,8 @@ export const DeliveriesPage: React.FC = () => {
                         : 'Confirm Outbound Dispatch'
                     }
                   >
-                    <Icon name="local_shipping" className="text-base" />
-                    <span>Validate &amp; Dispatch Order</span>
+                    <Icon name={isDispatching ? 'sync' : 'local_shipping'} className={`text-base ${isDispatching ? 'animate-spin' : ''}`} />
+                    <span>{isDispatching ? 'Dispatching...' : 'Validate & Dispatch Order'}</span>
                   </button>
                 </div>
               )}

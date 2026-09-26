@@ -21,7 +21,7 @@ export const SignupPage: React.FC = () => {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
 
@@ -36,11 +36,14 @@ export const SignupPage: React.FC = () => {
     }
 
     setIsLoading(true);
-    setTimeout(() => {
-      signup(name, email, role);
-      setIsLoading(false);
-      navigate('/dashboard');
-    }, 400);
+    const res = await signup(name, email, role, password);
+    setIsLoading(false);
+
+    if (res.success) {
+      navigate('/dashboard', { replace: true });
+    } else {
+      setError(res.message || 'Registration failed. Please check your information.');
+    }
   };
 
   return (

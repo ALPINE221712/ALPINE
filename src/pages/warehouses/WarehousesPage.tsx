@@ -82,73 +82,91 @@ export const WarehousesPage: React.FC = () => {
     return Array.from(new Set(list));
   }, [locations, selectedFacilityCode]);
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   // Handle Add Facility
-  const handleAddFacilitySubmit = (e: React.FormEvent) => {
+  const handleAddFacilitySubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!facilityForm.code.trim() || !facilityForm.name.trim()) {
       addToast({ type: 'error', title: 'Invalid Facility', message: 'Code and Name are required.' });
       return;
     }
-    const created = addWarehouse({
-      code: facilityForm.code.toUpperCase(),
-      name: facilityForm.name,
-      address: facilityForm.address,
-      manager: facilityForm.manager,
-      contact: facilityForm.contact,
-      type: facilityForm.type,
-      totalCapacityCbm: facilityForm.totalCapacityCbm,
-      utilizedCapacityCbm: 0,
-      activeBinsCount: 0,
-      zones: facilityForm.zones,
-    });
-    setIsAddFacilityModalOpen(false);
-    setSelectedFacilityCode(created.code);
-    setFacilityForm({
-      code: '',
-      name: '',
-      address: '',
-      manager: 'Marcus Vance',
-      contact: 'ops@stocksense.internal',
-      type: 'Distribution Hub',
-      totalCapacityCbm: 15000,
-      zones: ['Zone A', 'Zone B'],
-    });
+    try {
+      setIsSubmitting(true);
+      const created = await addWarehouse({
+        code: facilityForm.code.toUpperCase(),
+        name: facilityForm.name,
+        address: facilityForm.address,
+        manager: facilityForm.manager,
+        contact: facilityForm.contact,
+        type: facilityForm.type,
+        totalCapacityCbm: facilityForm.totalCapacityCbm,
+        utilizedCapacityCbm: 0,
+        activeBinsCount: 0,
+        zones: facilityForm.zones,
+      });
+      setIsAddFacilityModalOpen(false);
+      if (created?.code) {
+        setSelectedFacilityCode(created.code);
+      }
+      setFacilityForm({
+        code: '',
+        name: '',
+        address: '',
+        manager: 'Marcus Vance',
+        contact: 'ops@stocksense.internal',
+        type: 'Distribution Hub',
+        totalCapacityCbm: 15000,
+        zones: ['Zone A', 'Zone B'],
+      });
+    } catch (err: any) {
+      addToast({ type: 'error', title: 'Error', message: err.message || 'Failed to create warehouse.' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Handle Add Location
-  const handleAddLocationSubmit = (e: React.FormEvent) => {
+  const handleAddLocationSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!locationForm.code.trim()) {
       addToast({ type: 'error', title: 'Invalid Location', message: 'Location Code is required.' });
       return;
     }
 
-    const created = addLocation({
-      warehouseCode: selectedFacilityCode,
-      code: locationForm.code.toUpperCase(),
-      zone: locationForm.zone,
-      rack: locationForm.rack,
-      shelfTier: locationForm.shelfTier,
-      bin: locationForm.bin,
-      maxWeightKg: Number(locationForm.maxWeightKg),
-      currentWeightKg: Number(locationForm.currentWeightKg),
-      utilizationPercentage: Math.round((Number(locationForm.currentWeightKg) / Number(locationForm.maxWeightKg)) * 100),
-      status: 'Empty',
-      storedItems: [],
-      locationType: locationForm.locationType,
-    });
+    try {
+      setIsSubmitting(true);
+      await addLocation({
+        warehouseCode: selectedFacilityCode,
+        code: locationForm.code.toUpperCase(),
+        zone: locationForm.zone,
+        rack: locationForm.rack,
+        shelfTier: locationForm.shelfTier,
+        bin: locationForm.bin,
+        maxWeightKg: Number(locationForm.maxWeightKg),
+        currentWeightKg: Number(locationForm.currentWeightKg),
+        utilizationPercentage: Math.round((Number(locationForm.currentWeightKg) / Number(locationForm.maxWeightKg)) * 100),
+        status: 'Empty',
+        storedItems: [],
+        locationType: locationForm.locationType,
+      });
 
-    setIsAddLocationModalOpen(false);
-    setLocationForm({
-      code: '',
-      zone: 'Zone A',
-      rack: 'Rack A-01',
-      shelfTier: 'Tier 1',
-      bin: 'B01',
-      maxWeightKg: 1000,
-      currentWeightKg: 0,
-      locationType: 'Heavy Beam Rack',
-    });
+      setIsAddLocationModalOpen(false);
+      setLocationForm({
+        code: '',
+        zone: 'Zone A',
+        rack: 'Rack A-01',
+        shelfTier: 'Tier 1',
+        bin: 'B01',
+        maxWeightKg: 1000,
+        currentWeightKg: 0,
+        locationType: 'Heavy Beam Rack',
+      });
+    } catch (err: any) {
+      addToast({ type: 'error', title: 'Error', message: err.message || 'Failed to create location.' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -556,7 +574,7 @@ export const WarehousesPage: React.FC = () => {
 
           <div className="p-3 bg-surface-container-low border-t border-outline-variant flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
             <span>
-              Showing {facilityLocations.length} locations in {currentWarehouse.code}
+              Showing {facilityLocations.length} locations in {currentWarehouse?.code || selectedFacilityCode}
             </span>
             <span className="text-outline">Physical Inventory Topology</span>
           </div>
@@ -758,9 +776,11 @@ export const WarehousesPage: React.FC = () => {
             </button>
             <button
               type="submit"
-              className="h-8 px-4 rounded bg-primary text-on-primary hover:bg-primary/90 font-title-sm text-title-sm transition-colors shadow-sm"
+              disabled={isSubmitting}
+              className="h-8 px-4 rounded bg-primary text-on-primary hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed font-title-sm text-title-sm transition-colors shadow-sm flex items-center gap-1.5"
             >
-              Create Facility
+              {isSubmitting && <Icon name="sync" className="text-sm animate-spin" />}
+              <span>{isSubmitting ? 'Creating...' : 'Create Facility'}</span>
             </button>
           </div>
         </form>
@@ -887,9 +907,11 @@ export const WarehousesPage: React.FC = () => {
             </button>
             <button
               type="submit"
-              className="h-8 px-4 rounded bg-primary text-on-primary hover:bg-primary/90 font-title-sm text-title-sm transition-colors shadow-sm"
+              disabled={isSubmitting}
+              className="h-8 px-4 rounded bg-primary text-on-primary hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed font-title-sm text-title-sm transition-colors shadow-sm flex items-center gap-1.5"
             >
-              Add Storage Location
+              {isSubmitting && <Icon name="sync" className="text-sm animate-spin" />}
+              <span>{isSubmitting ? 'Adding...' : 'Add Storage Location'}</span>
             </button>
           </div>
         </form>

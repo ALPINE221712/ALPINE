@@ -4,8 +4,8 @@ const { requireAuth } = require('../middleware/authMiddleware');
 
 const router = express.Router();
 
-router.get('/', transferController.getAll);
-router.get('/:id', transferController.getById);
+router.get('/', requireAuth, transferController.getAll);
+router.get('/:id', requireAuth, transferController.getById);
 
 router.post('/', requireAuth, transferController.create);
 router.put('/:id', requireAuth, transferController.update);

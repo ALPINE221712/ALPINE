@@ -16,6 +16,7 @@ export const TopHeader: React.FC = () => {
   const [isActionDropdownOpen, setIsActionDropdownOpen] = useState(false);
 
   const currentWh = warehouses.find((w) => w.code === selectedWarehouseCode) || warehouses[0];
+  const whName = currentWh?.name || 'Active Warehouse';
 
   return (
     <header className="fixed top-0 left-64 right-0 h-14 bg-surface-container-lowest border-b border-outline-variant z-30 px-6 flex items-center justify-between">
@@ -32,7 +33,7 @@ export const TopHeader: React.FC = () => {
               onClick={() => setIsWhDropdownOpen(!isWhDropdownOpen)}
               className="flex items-center gap-1 font-title-sm text-title-sm text-on-surface hover:text-primary transition-colors py-1 px-1.5 rounded hover:bg-surface-container-low"
             >
-              <span>{currentWh.name}</span>
+              <span>{whName}</span>
               <Icon name="expand_more" className="text-sm text-outline" />
             </button>
 

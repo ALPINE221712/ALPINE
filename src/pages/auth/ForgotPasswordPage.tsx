@@ -3,26 +3,39 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useInventory } from '../../store/inventoryStore';
 import { Icon } from '../../components/common/Icon';
 
+import { authApi } from '../../lib/api';
+
 export const ForgotPasswordPage: React.FC = () => {
   const navigate = useNavigate();
   const { addToast } = useInventory();
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
 
     setIsLoading(true);
-    setTimeout(() => {
+    try {
+      const res = await authApi.forgotPassword(email.trim());
       setIsLoading(false);
+      const devOtpQuery = res?.dev_otp ? `&dev_otp=${encodeURIComponent(res.dev_otp)}` : '';
       addToast({
         type: 'info',
         title: 'Verification Code Dispatched',
-        message: `A 6-digit OTP security code has been sent to ${email}.`,
+        message: res?.dev_otp
+          ? `Security OTP generated: ${res.dev_otp}`
+          : `A 6-digit OTP security code has been sent to ${email}.`,
       });
-      navigate(`/verify-otp?email=${encodeURIComponent(email)}`);
-    }, 400);
+      navigate(`/verify-otp?email=${encodeURIComponent(email.trim())}${devOtpQuery}`);
+    } catch (err: any) {
+      setIsLoading(false);
+      addToast({
+        type: 'error',
+        title: 'Request Failed',
+        message: err.message || 'Unable to dispatch verification code.',
+      });
+    }
   };
 
   return (

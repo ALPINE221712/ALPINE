@@ -4,8 +4,8 @@ const { requireAuth } = require('../middleware/authMiddleware');
 
 const router = express.Router();
 
-router.get('/', receiptController.getAll);
-router.get('/:id', receiptController.getById);
+router.get('/', requireAuth, receiptController.getAll);
+router.get('/:id', requireAuth, receiptController.getById);
 
 router.post('/', requireAuth, receiptController.create);
 router.put('/:id', requireAuth, receiptController.update);
