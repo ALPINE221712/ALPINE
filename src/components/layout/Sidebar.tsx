@@ -10,7 +10,7 @@ export const Sidebar: React.FC = () => {
 
   const handleLogout = () => {
     logout();
-    navigate('/login');
+    navigate('/');
   };
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>

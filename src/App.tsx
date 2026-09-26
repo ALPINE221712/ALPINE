@@ -24,6 +24,8 @@ import { LedgerPage } from './pages/ledger/LedgerPage';
 import { WarehousesPage } from './pages/warehouses/WarehousesPage';
 import { ProfilePage } from './pages/profile/ProfilePage';
 
+import { LandingPage } from './pages/landing/LandingPage';
+
 // Common Components
 import { CommandPalette } from './components/search/CommandPalette';
 import { ToastContainer } from './components/common/ToastContainer';
@@ -34,6 +36,9 @@ export const App: React.FC = () => {
   return (
     <>
       <Routes>
+        {/* Public Landing Page */}
+        <Route path="/" element={<LandingPage />} />
+
         {/* Auth Routes */}
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<LoginPage />} />
@@ -66,13 +71,10 @@ export const App: React.FC = () => {
           <Route path="/warehouses" element={<WarehousesPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/settings" element={<Navigate to="/profile" replace />} />
-
-          {/* Root redirect */}
-          <Route path="/" element={<Navigate to="/dashboard" replace />} />
         </Route>
 
-        {/* Catch-all */}
-        <Route path="*" element={<Navigate to="/dashboard" replace />} />
+        {/* Catch-all: send to dashboard if authenticated, else landing page */}
+        <Route path="*" element={<Navigate to={isAuthenticated ? "/dashboard" : "/"} replace />} />
       </Routes>
 
       {/* Global Modals & Notifications */}

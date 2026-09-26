@@ -109,7 +109,7 @@ export const InventoryProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   // Auth state
   const [user, setUser] = useState<User | null>(() => {
     const saved = localStorage.getItem(STORAGE_KEYS.USER);
-    return saved ? JSON.parse(saved) : mockCurrentUser;
+    return saved ? JSON.parse(saved) : null;
   });
 
   const isAuthenticated = Boolean(user);

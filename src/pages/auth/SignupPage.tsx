@@ -4,8 +4,14 @@ import { useInventory } from '../../store/inventoryStore';
 import { Icon } from '../../components/common/Icon';
 
 export const SignupPage: React.FC = () => {
-  const { signup } = useInventory();
+  const { signup, isAuthenticated } = useInventory();
   const navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/dashboard', { replace: true });
+    }
+  }, [isAuthenticated, navigate]);
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -147,6 +153,13 @@ export const SignupPage: React.FC = () => {
         <span>Already have an operator account?</span>
         <Link to="/login" className="text-primary font-semibold hover:underline">
           Sign In
+        </Link>
+      </div>
+
+      <div className="mt-3 text-center">
+        <Link to="/" className="text-xs text-outline hover:text-on-surface transition-colors inline-flex items-center gap-1">
+          <Icon name="arrow_back" className="text-xs" />
+          <span>Back to Public Overview</span>
         </Link>
       </div>
     </div>
