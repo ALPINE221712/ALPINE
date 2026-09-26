@@ -8,9 +8,26 @@ export const LandingPage: React.FC = () => {
   const [activeWorkflowTab, setActiveWorkflowTab] = useState<'receipts' | 'deliveries' | 'transfers' | 'adjustments'>('receipts');
 
   return (
-    <div className="min-h-screen bg-surface-container-low text-on-surface flex flex-col font-body-md select-none">
+    <div className="relative min-h-screen bg-surface-container-low text-on-surface flex flex-col font-body-md select-none">
+      {/* Fixed background video: stays in the same viewport position while the page scrolls. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
+      >
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          src="/videos/stocksense-bg.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        />
+        <div className="absolute inset-0 bg-white/55" />
+        <div className="absolute inset-0 bg-blue-950/5" />
+      </div>
       {/* Top B2B Operational Navigation Bar */}
-      <header className="sticky top-0 z-50 h-14 bg-surface-container-lowest border-b border-outline-variant px-6 flex items-center justify-between shadow-2xs">
+      <header className="relative sticky top-0 z-50 h-14 bg-surface-container-lowest border-b border-outline-variant px-6 flex items-center justify-between shadow-2xs">
         <div className="flex items-center gap-6">
           <Link to="/" className="flex items-center gap-2.5 hover:opacity-90 transition-opacity">
             <Logo className="h-7 w-auto" />
@@ -56,7 +73,7 @@ export const LandingPage: React.FC = () => {
       </header>
 
       {/* Hero Section: Enterprise Problem & Purpose */}
-      <section className="px-6 pt-12 pb-10 bg-surface-container-lowest border-b border-outline-variant">
+      <section className="relative z-10 px-6 pt-12 pb-10 bg-white/88 backdrop-blur-[2px] border-b border-outline-variant">
         <div className="max-w-5xl mx-auto space-y-5 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-secondary-container text-on-secondary-fixed text-xs font-semibold uppercase tracking-wider border border-primary/20">
             <Icon name="precision_manufacturing" className="text-sm text-primary" />
@@ -115,7 +132,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Interactive Operational Workbench Preview */}
-      <section id="workflow-preview" className="px-6 py-10 bg-surface-container-low border-b border-outline-variant">
+      <section id="workflow-preview" className="relative z-10 px-6 py-10 bg-slate-100/82 backdrop-blur-[2px] border-b border-outline-variant">
         <div className="max-w-6xl mx-auto space-y-4">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-3">
             <div>
@@ -442,7 +459,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Core Capabilities Section */}
-      <section id="core-capabilities" className="px-6 py-12 bg-surface-container-lowest border-b border-outline-variant">
+      <section id="core-capabilities" className="relative z-10 px-6 py-12 bg-white/88 backdrop-blur-[2px] border-b border-outline-variant">
         <div className="max-w-6xl mx-auto space-y-8">
           <div className="text-center space-y-2">
             <h2 className="font-headline-sm text-headline-sm text-on-surface font-bold">
@@ -518,7 +535,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Facilities & Infrastructure Topology */}
-      <section id="facilities" className="px-6 py-10 bg-surface-container-low border-b border-outline-variant">
+      <section id="facilities" className="relative z-10 px-6 py-10 bg-slate-100/82 backdrop-blur-[2px] border-b border-outline-variant">
         <div className="max-w-6xl mx-auto space-y-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
             <div>
@@ -577,7 +594,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="px-6 py-12 bg-surface-container-lowest border-b border-outline-variant text-center">
+      <section className="relative z-10 px-6 py-12 bg-white/88 backdrop-blur-[2px] border-b border-outline-variant text-center">
         <div className="max-w-2xl mx-auto space-y-4">
           <h2 className="font-headline-md text-2xl font-bold text-on-surface">
             Ready to Initialize Your Warehouse Workspace?
@@ -604,7 +621,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Simple B2B Footer */}
-      <footer className="px-6 py-8 bg-surface-container-lowest mt-auto text-xs text-on-surface-variant">
+      <footer className="relative z-10 px-6 py-8 bg-white/90 backdrop-blur-[2px] mt-auto text-xs text-on-surface-variant">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <Logo className="h-6 w-auto" />
