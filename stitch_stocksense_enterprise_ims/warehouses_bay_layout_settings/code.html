@@ -1,0 +1,814 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"background":"#faf8ff","on-secondary":"#ffffff","primary-container":"#1d4ed8","outline":"#747686","on-primary-fixed-variant":"#0039b5","secondary-fixed":"#d5e3fc","surface":"#faf8ff","primary":"#0037b0","on-error":"#ffffff","on-secondary-fixed-variant":"#3a485b","primary-fixed-dim":"#b7c4ff","error":"#ba1a1a","surface-container-highest":"#dae2fd","surface-container-high":"#e2e7ff","primary-fixed":"#dce1ff","tertiary-fixed-dim":"#68dba9","inverse-surface":"#283044","surface-container":"#eaedff","on-error-container":"#93000a","on-tertiary-container":"#76eab6","on-primary":"#ffffff","on-background":"#131b2e","error-container":"#ffdad6","outline-variant":"#c4c5d7","surface-tint":"#2151da","on-secondary-container":"#57657a","inverse-on-surface":"#eef0ff","on-secondary-fixed":"#0d1c2e","surface-bright":"#faf8ff","inverse-primary":"#b7c4ff","on-tertiary-fixed-variant":"#005137","secondary-fixed-dim":"#b9c7df","surface-variant":"#dae2fd","secondary":"#515f74","surface-container-lowest":"#ffffff","tertiary":"#004f35","on-primary-container":"#cad3ff","on-tertiary-fixed":"#002114","on-primary-fixed":"#001551","tertiary-fixed":"#85f8c4","on-surface":"#131b2e","surface-container-low":"#f2f3ff","on-tertiary":"#ffffff","surface-dim":"#d2d9f4","on-surface-variant":"#434655","tertiary-container":"#006948","secondary-container":"#d5e3fc"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin":"1rem","space-md":"0.5rem","space-sm":"0.25rem","space-xl":"1rem","space-lg":"0.75rem","space-xs":"0.125rem","gutter":"0.75rem"},"fontFamily":{"headline-lg":["Inter"],"title-md":["Inter"],"label-sm":["Inter"],"title-sm":["Inter"],"label-md":["Inter"],"headline-sm":["Inter"],"headline-md":["Inter"],"tabular-kpi":["Inter"],"tabular-body":["Inter"],"body-sm":["Inter"],"body-md":["Inter"]},"fontSize":{"headline-lg":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"title-md":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"-0.005em","fontWeight":"600"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.04em","fontWeight":"600"}],"title-sm":["0.8125rem",{"lineHeight":"1.125rem","letterSpacing":"0em","fontWeight":"600"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"600"}],"headline-sm":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-md":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"600"}],"tabular-kpi":["1.75rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"700"}],"tabular-body":["0.8125rem",{"lineHeight":"1.125rem","letterSpacing":"-0.005em","fontWeight":"500"}],"body-sm":["0.8125rem",{"lineHeight":"1.125rem","letterSpacing":"0em","fontWeight":"400"}],"body-md":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"400"}]}}}</script></head><body class="bg-surface-container-low font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest border-r border-outline-variant z-50 flex flex-col justify-between select-none"><div class="flex flex-col min-h-0"><div class="h-14 px-4 flex items-center justify-between border-b border-outline-variant bg-surface-container-lowest"><div class="flex items-center gap-space-md min-w-0"><img alt="StockSense Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XifryD1c-SkFjJE1VkwG_RHRWu0KOzpsgN2mfbO40fg6qxuWlsw3nR9pYLCQZviZs_e7RiM5SCx7cetjSWz3-6jv-Xw8J4HPzKH6pXxO4dymnLalYEmZxt717idCGla_1nb4RkQBr57XtESGfsMJp7qwOkRTkMeY6JkxAXMI9yDapDoMPfDUSgRfDzUtyndy41ROzgF1zXYFA682NquJvrH5Xv3mK_9eOQ91JmG4fjB7q53otWVZEvc08"><div class="flex flex-col min-w-0"><span class="font-title-sm text-title-sm text-on-surface truncate">StockSense</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">Enterprise IMS</span></div></div></div><div class="px-4 py-space-md border-b border-outline-variant bg-surface-container-low"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-sm text-primary">warehouse</span><span class="font-label-md text-label-md text-on-surface font-semibold">WH-01</span></div><span class="font-label-sm text-label-sm bg-secondary-container text-on-secondary-container px-space-sm py-space-xs rounded">Main Facility</span></div></div><div class="flex-1 overflow-y-auto px-3 py-space-md space-y-space-lg"><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-title-sm"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded transition-colors text-on-surface-variant" data-path="dashboard" href="#"><span class="material-symbols-outlined text-base">dashboard</span><span>Dashboard</span></a></nav><div class="space-y-space-xs"><div class="px-space-md py-space-xs font-label-sm text-label-sm uppercase text-outline tracking-wider font-semibold">Inventory</div><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-title-sm"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="products" href="#"><span class="material-symbols-outlined text-base">inventory_2</span><span>Products</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="stock-overview" href="#"><span class="material-symbols-outlined text-base">monitoring</span><span>Stock Overview</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-md py-space-xs font-label-sm text-label-sm uppercase text-outline tracking-wider font-semibold">Operations</div><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-title-sm"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="receipts" href="#"><span class="material-symbols-outlined text-base">call_received</span><span>Receipts</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="deliveries" href="#"><span class="material-symbols-outlined text-base">local_shipping</span><span>Deliveries</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="transfers" href="#"><span class="material-symbols-outlined text-base">sync_alt</span><span>Transfers</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="adjustments" href="#"><span class="material-symbols-outlined text-base">tune</span><span>Adjustments</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="move-history" href="#"><span class="material-symbols-outlined text-base">receipt_long</span><span>Move History</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-md py-space-xs font-label-sm text-label-sm uppercase text-outline tracking-wider font-semibold">Settings</div><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-title-sm"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="warehouses" href="#"><span class="material-symbols-outlined text-base">store</span><span>Warehouses</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-base">settings</span><span>Settings</span></a></nav></div></div></div><div class="p-3 border-t border-outline-variant bg-surface-container-lowest"><div class="flex items-center justify-between gap-space-sm p-space-sm rounded hover:bg-surface-container-low transition-colors"><div class="flex items-center gap-space-sm min-w-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKDUZgZKMdPT-CFzSWlMKR8BQuTj8Qz1Myp8wtqRRXc-TqrhEvbdgyIqXc0kWrZvJk9qN9Sq7SUfTnBqij8gdVYegsqoAtqbz1eS0HdThiILORSSe7kakWdPvOSFRHVy3d6IGs3sQAC6FOh3XhlT94iEGd4vXGyriMfPgKRSXyhWVt0FAyTa2Di5Fz-n6IXQjKQLrrL0SNHJMjygeYOuLvzdMUWGdRjzdoxx4C4Uw5PqP-bpHU4yIe"><div class="flex flex-col min-w-0"><span class="font-title-sm text-title-sm text-on-surface truncate leading-tight">Marcus Vance</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Operations Manager</span></div></div><button class="p-1 text-on-surface-variant hover:text-error hover:bg-error-container rounded transition-colors" title="Sign out" type="button"><span class="material-symbols-outlined text-base">logout</span></button></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-container-lowest border-b border-outline-variant z-40 px-6 flex items-center justify-between"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant"><span class="material-symbols-outlined text-sm">domain</span><span class="text-outline">StockSense</span><span class="text-outline">/</span><button class="flex items-center gap-space-xs font-title-sm text-title-sm text-on-surface hover:text-primary transition-colors"><span>All Locations / Main Warehouse</span><span class="material-symbols-outlined text-sm">expand_more</span></button></div></div><div class="flex-1 max-w-md mx-6"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-2.5 text-base text-outline pointer-events-none">search</span><input class="w-full h-8 pl-8 pr-12 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:bg-surface-container-lowest" placeholder="Search SKU, Product, PO#, or Delivery..." type="text"><div class="absolute right-2 flex items-center gap-space-xs pointer-events-none"><kbd class="font-label-sm text-label-sm bg-surface-container px-1 py-0.5 rounded text-on-surface-variant border border-outline-variant">⌘K</kbd></div></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-2 py-1 rounded bg-surface-container font-label-sm text-label-sm text-tertiary font-medium"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container animate-pulse"></span><span>Sync: Live 1s ago</span></div><div class="h-4 w-px bg-outline-variant"></div><button class="relative p-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded transition-colors" title="Notifications" type="button"><span class="material-symbols-outlined text-base">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-primary ring-2 ring-surface-container-lowest"></span></button><button class="h-8 px-space-lg bg-primary-container hover:bg-primary text-on-primary font-title-sm text-title-sm rounded flex items-center gap-space-xs transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-base">add</span><span>New Action</span><span class="material-symbols-outlined text-xs">arrow_drop_down</span></button></div></header><main class="w-full pt-14 bg-surface-container-low min-h-screen"><div class="flex flex-col w-full">
+<!-- Sub-header / Breadcrumbs & Page Actions Bar -->
+<div class="bg-surface-container-lowest px-6 py-4 border-b border-outline-variant">
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-outline uppercase tracking-wider mb-1">
+<span>Settings</span>
+<span>/</span>
+<span class="text-primary font-bold">Warehouses &amp; Locations</span>
+</div>
+<h1 class="font-headline-sm text-headline-sm text-on-surface">Warehouse Infrastructure &amp; Bay Configuration</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 max-w-4xl">
+          Configure multi-facility physical hierarchies, warehouse sectors, high-bay cantilever racks, and individual storage bin capacities with real-time volumetric and weight-load constraints.
+        </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center flex-wrap gap-2 shrink-0">
+<button class="h-8 px-3 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface border border-outline-variant rounded font-title-sm text-title-sm flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-base text-secondary">file_download</span>
+<span>Export Layout (JSON/CSV)</span>
+</button>
+<button class="h-8 px-3 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface border border-outline-variant rounded font-title-sm text-title-sm flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-base text-secondary">grid_view</span>
+<span>Floor Plan Blueprint</span>
+</button>
+<button class="h-8 px-3 bg-secondary-container hover:bg-surface-container-high text-on-secondary-fixed font-title-sm text-title-sm rounded flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-base">domain_add</span>
+<span>+ Create Zone/Aisle</span>
+</button>
+<button class="h-8 px-3.5 bg-primary-container hover:bg-primary text-on-primary font-title-sm text-title-sm rounded flex items-center gap-1.5 transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-base">add_business</span>
+<span>+ Add New Facility</span>
+</button>
+</div>
+</div>
+<!-- Facility Overview Metric Strip -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mt-4 pt-4 border-t border-outline-variant">
+<!-- Metric 1 -->
+<div class="bg-surface-container-low p-3 rounded border border-outline-variant flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-outline">Active Facilities</span>
+<span class="material-symbols-outlined text-base text-primary">domain</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">3 Facilities</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>WH-01 Main, WH-02 Annex, WH-03 Bulk</span>
+</div>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-low p-3 rounded border border-outline-variant flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-outline">Total Storage Locations</span>
+<span class="material-symbols-outlined text-base text-primary">shelves</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">1,420 Bins</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="text-tertiary font-semibold">94.2%</span>
+<span>Indexed with barcodes</span>
+</div>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-low p-3 rounded border border-outline-variant flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-outline">Volumetric Utilization</span>
+<span class="material-symbols-outlined text-base text-primary">pie_chart</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">84.6% Avg Load</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="text-primary font-medium">Optimal buffer (+15.4% free)</span>
+</div>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface-container-low p-3 rounded border border-outline-variant flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-outline">Controlled Enclosures</span>
+<span class="material-symbols-outlined text-base text-secondary">severe_cold</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">2 ISO · 1 Vault</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>Live telemetry active</span>
+</div>
+</div>
+</div>
+<!-- Metric 5 -->
+<div class="bg-surface-container-low p-3 rounded border border-outline-variant flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-outline">Active Staging Bays</span>
+<span class="material-symbols-outlined text-base text-secondary">forklift</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">8 Dedicated Bays</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span>5 Inbound / 3 Cross-dock active</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Primary Workspace Content (Two-Column Layout) -->
+<div class="p-6 flex flex-col xl:flex-row gap-6 items-start">
+<!-- Left Column: Facility Hierarchy, Visual Matrix & Bay Table -->
+<div class="flex-1 w-full min-w-0 space-y-6">
+<!-- Facility Selector Tabs -->
+<div class="bg-surface-container-lowest rounded border border-outline-variant p-2 flex items-center gap-2 overflow-x-auto">
+<button class="h-9 px-4 rounded bg-primary-container text-on-primary font-title-sm text-title-sm flex items-center gap-2 whitespace-nowrap shadow-sm" type="button">
+<span class="material-symbols-outlined text-base">warehouse</span>
+<span>WH-01 Main Facility (Primary Distribution)</span>
+<span class="bg-primary px-1.5 py-0.5 text-[10px] rounded font-mono">680 Bins</span>
+</button>
+<button class="h-9 px-4 rounded hover:bg-surface-container text-on-surface-variant font-title-sm text-title-sm flex items-center gap-2 whitespace-nowrap transition-colors" type="button">
+<span class="material-symbols-outlined text-base">store</span>
+<span>WH-02 North Bay Annex</span>
+<span class="bg-surface-container-high px-1.5 py-0.5 text-[10px] rounded font-mono text-on-surface">420 Bins</span>
+</button>
+<button class="h-9 px-4 rounded hover:bg-surface-container text-on-surface-variant font-title-sm text-title-sm flex items-center gap-2 whitespace-nowrap transition-colors" type="button">
+<span class="material-symbols-outlined text-base">factory</span>
+<span>WH-03 Bulk High-Bay Hub</span>
+<span class="bg-surface-container-high px-1.5 py-0.5 text-[10px] rounded font-mono text-on-surface">320 Bins</span>
+</button>
+</div>
+<!-- Zone Filter Pills & Schematic Controls -->
+<div class="bg-surface-container-lowest rounded border border-outline-variant p-4">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-3 border-b border-outline-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">schema</span>
+<span class="font-title-sm text-title-sm text-on-surface">Physical Zone Navigation &amp; Floor Sector</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> &lt;75% Capacity
+            </span>
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span> 75-90% Near Limit
+            </span>
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-error"></span> &gt;90% Critical
+            </span>
+</div>
+</div>
+<!-- Zone Tabs -->
+<div class="flex items-center gap-2 pt-3 overflow-x-auto">
+<button class="h-7 px-2.5 rounded bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors whitespace-nowrap" type="button">
+            All Zones (5)
+          </button>
+<button class="h-7 px-2.5 rounded bg-secondary-container text-on-secondary-fixed font-label-md text-label-md border border-primary/20 whitespace-nowrap flex items-center gap-1" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Zone A: High-Value &amp; Fast-Pick</span>
+</button>
+<button class="h-7 px-2.5 rounded bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors whitespace-nowrap" type="button">
+            Zone B: Bulk Storage &amp; Heavy Alloy
+          </button>
+<button class="h-7 px-2.5 rounded bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors whitespace-nowrap" type="button">
+            Zone C: Cleanroom &amp; Optics
+          </button>
+<button class="h-7 px-2.5 rounded bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors whitespace-nowrap" type="button">
+            Zone D: Inbound Staging &amp; Cross-dock
+          </button>
+</div>
+<!-- 2D High-Bay Schematic Grid / Rack Matrix -->
+<div class="mt-4 bg-surface-container-low rounded p-3 border border-outline-variant">
+<div class="flex items-center justify-between mb-3 text-xs">
+<div class="font-title-sm text-title-sm text-on-surface flex items-center gap-2">
+<span class="font-mono bg-surface-container-high px-1.5 py-0.5 rounded text-primary font-bold">SECTOR A · AISLE 02</span>
+<span class="text-on-surface-variant font-normal">Heavy-Duty Beam Racks (Level 1–4) &amp; Cantilever Bays</span>
+</div>
+<div class="flex items-center gap-2 text-outline">
+<span class="font-label-sm text-label-sm">Facing: North Loading Deck 01</span>
+<button class="hover:text-on-surface p-1" title="Zoom in" type="button">
+<span class="material-symbols-outlined text-base">zoom_in</span>
+</button>
+</div>
+</div>
+<!-- Racks Layout Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<!-- Rack A-01 -->
+<div class="bg-surface-container-lowest p-2.5 rounded border border-outline-variant hover:border-primary cursor-pointer transition-colors">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-mono font-bold text-xs text-on-surface">RACK A-01</span>
+<span class="font-label-sm text-[10px] px-1 py-0.2 rounded bg-tertiary/10 text-tertiary font-bold">54% LOAD</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded overflow-hidden mb-2">
+<div class="bg-tertiary h-full rounded" style="width: 54%"></div>
+</div>
+<div class="grid grid-cols-2 gap-1 text-[11px] font-mono text-outline">
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B01 · 320kg</div>
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B02 · 480kg</div>
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B03 · 110kg</div>
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B04 · EMPTY</div>
+</div>
+</div>
+<!-- Rack A-02 -->
+<div class="bg-surface-container-lowest p-2.5 rounded border border-outline-variant hover:border-primary cursor-pointer transition-colors">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-mono font-bold text-xs text-on-surface">RACK A-02</span>
+<span class="font-label-sm text-[10px] px-1 py-0.2 rounded bg-tertiary/10 text-tertiary font-bold">68% LOAD</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded overflow-hidden mb-2">
+<div class="bg-tertiary h-full rounded" style="width: 68%"></div>
+</div>
+<div class="grid grid-cols-2 gap-1 text-[11px] font-mono text-outline">
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B01 · 650kg</div>
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B02 · 580kg</div>
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B03 · 420kg</div>
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B04 · 300kg</div>
+</div>
+</div>
+<!-- Rack A-03 -->
+<div class="bg-surface-container-lowest p-2.5 rounded border border-outline-variant hover:border-primary cursor-pointer transition-colors">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-mono font-bold text-xs text-on-surface">RACK A-03</span>
+<span class="font-label-sm text-[10px] px-1 py-0.2 rounded bg-amber-500/10 text-amber-700 font-bold">78% LOAD</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded overflow-hidden mb-2">
+<div class="bg-amber-500 h-full rounded" style="width: 78%"></div>
+</div>
+<div class="grid grid-cols-2 gap-1 text-[11px] font-mono text-outline">
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B01 · 920kg</div>
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B02 · 710kg</div>
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B03 · 540kg</div>
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B04 · 390kg</div>
+</div>
+</div>
+<!-- Rack A-04 (Selected State) -->
+<div class="bg-primary/5 p-2.5 rounded border-2 border-primary cursor-pointer relative shadow-sm">
+<div class="absolute -top-2 right-2 bg-primary text-on-primary font-label-sm text-[9px] px-1.5 rounded uppercase font-bold tracking-wider">Inspecting</div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-mono font-bold text-xs text-primary">RACK A-04</span>
+<span class="font-label-sm text-[10px] px-1 py-0.2 rounded bg-amber-500/10 text-amber-700 font-bold">87% LOAD</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded overflow-hidden mb-2">
+<div class="bg-amber-500 h-full rounded" style="width: 87%"></div>
+</div>
+<div class="grid grid-cols-2 gap-1 text-[11px] font-mono">
+<div class="bg-primary-container text-on-primary p-1 rounded text-center font-bold">B01 · 1,740kg</div>
+<div class="bg-surface-container-lowest p-1 rounded text-center text-on-surface">B02 · 890kg</div>
+<div class="bg-surface-container-lowest p-1 rounded text-center text-on-surface">B03 · 610kg</div>
+<div class="bg-surface-container-lowest p-1 rounded text-center text-on-surface">B04 · 420kg</div>
+</div>
+</div>
+<!-- Rack A-05 -->
+<div class="bg-surface-container-lowest p-2.5 rounded border border-outline-variant hover:border-primary cursor-pointer transition-colors">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-mono font-bold text-xs text-on-surface">RACK A-05</span>
+<span class="font-label-sm text-[10px] px-1 py-0.2 rounded bg-error/10 text-error font-bold">94% FULL</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded overflow-hidden mb-2">
+<div class="bg-error h-full rounded" style="width: 94%"></div>
+</div>
+<div class="grid grid-cols-2 gap-1 text-[11px] font-mono text-outline">
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B01 · 1,980kg</div>
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B02 · 1,850kg</div>
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B03 · 920kg</div>
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B04 · 810kg</div>
+</div>
+</div>
+<!-- Rack A-06 -->
+<div class="bg-surface-container-lowest p-2.5 rounded border border-outline-variant hover:border-primary cursor-pointer transition-colors">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-mono font-bold text-xs text-on-surface">RACK A-06</span>
+<span class="font-label-sm text-[10px] px-1 py-0.2 rounded bg-tertiary/10 text-tertiary font-bold">38% LOAD</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded overflow-hidden mb-2">
+<div class="bg-tertiary h-full rounded" style="width: 38%"></div>
+</div>
+<div class="grid grid-cols-2 gap-1 text-[11px] font-mono text-outline">
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B01 · 410kg</div>
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B02 · 350kg</div>
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B03 · EMPTY</div>
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B04 · EMPTY</div>
+</div>
+</div>
+<!-- Rack A-07 -->
+<div class="bg-surface-container-lowest p-2.5 rounded border border-outline-variant hover:border-primary cursor-pointer transition-colors">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-mono font-bold text-xs text-on-surface">RACK A-07</span>
+<span class="font-label-sm text-[10px] px-1 py-0.2 rounded bg-tertiary/10 text-tertiary font-bold">71% LOAD</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded overflow-hidden mb-2">
+<div class="bg-tertiary h-full rounded" style="width: 71%"></div>
+</div>
+<div class="grid grid-cols-2 gap-1 text-[11px] font-mono text-outline">
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B01 · 820kg</div>
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B02 · 790kg</div>
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B03 · 640kg</div>
+<div class="bg-surface-container-low p-1 rounded text-center text-on-surface">B04 · 580kg</div>
+</div>
+</div>
+<!-- Bay 02 Cantilever Bulk -->
+<div class="bg-surface-container-lowest p-2.5 rounded border border-outline-variant hover:border-primary cursor-pointer transition-colors">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-mono font-bold text-xs text-on-surface">BAY 02 (BULK)</span>
+<span class="font-label-sm text-[10px] px-1 py-0.2 rounded bg-error/10 text-error font-bold">92% FULL</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded overflow-hidden mb-2">
+<div class="bg-error h-full rounded" style="width: 92%"></div>
+</div>
+<div class="bg-surface-container-low p-2 rounded text-center font-mono text-xs text-on-surface">
+                Pallet Staging · 14 / 15 Heavy Alloy Crates
+              </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Location Inventory & Bin Grid Data Table -->
+<div class="bg-surface-container-lowest rounded border border-outline-variant">
+<!-- Table Toolbar -->
+<div class="p-3 border-b border-outline-variant flex flex-col md:flex-row md:items-center justify-between gap-3">
+<div class="flex items-center gap-2 flex-1 max-w-md">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-2.5 top-2 text-base text-outline pointer-events-none">search</span>
+<input class="w-full h-8 pl-8 pr-3 text-xs bg-surface-container-low border border-outline-variant rounded text-on-surface placeholder:text-outline focus:outline-none focus:border-primary" placeholder="Filter by Bin Code, Zone, SKU, or Barcode ID..." type="text" value="WH-01-ZA">
+</div>
+</div>
+<div class="flex items-center gap-2">
+<select class="h-8 px-2 text-xs bg-surface-container-low border border-outline-variant rounded text-on-surface focus:outline-none">
+<option>All Types (Beam, Cantilever, High-Density)</option>
+<option>Heavy Industrial Beam Rack</option>
+<option>High-Density Small Parts Bin</option>
+<option>Bulk Cantilever Shelf</option>
+<option>Floor Staging Bay</option>
+</select>
+<select class="h-8 px-2 text-xs bg-surface-container-low border border-outline-variant rounded text-on-surface focus:outline-none">
+<option>Status: All (Available, Near Cap, Reserved)</option>
+<option>Available (&lt;75%)</option>
+<option>Near Capacity (75-90%)</option>
+<option>Critical (&gt;90%)</option>
+</select>
+<button class="h-8 w-8 flex items-center justify-center bg-surface-container-low border border-outline-variant rounded text-outline hover:text-on-surface" title="Reset Filters" type="button">
+<span class="material-symbols-outlined text-base">refresh</span>
+</button>
+</div>
+</div>
+<!-- Dense Data Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant font-label-sm text-label-sm text-outline uppercase tracking-wider h-8">
+<th class="px-3 py-1 w-8">
+<input class="rounded border-outline-variant text-primary focus:ring-0" type="checkbox">
+</th>
+<th class="px-3 py-1">Location Code</th>
+<th class="px-3 py-1">Zone / Sector</th>
+<th class="px-3 py-1">Storage Type</th>
+<th class="px-3 py-1">Current Stored SKUs</th>
+<th class="px-3 py-1 text-right">Volume / Weight</th>
+<th class="px-3 py-1">Occupancy</th>
+<th class="px-3 py-1">Status</th>
+<th class="px-3 py-1 text-center">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant text-body-sm text-body-sm">
+<!-- Row 1: Selected Row -->
+<tr class="bg-primary/5 hover:bg-primary/10 transition-colors border-l-2 border-primary cursor-pointer">
+<td class="px-3 py-2">
+<input checked="" class="rounded border-outline-variant text-primary focus:ring-0" type="checkbox">
+</td>
+<td class="px-3 py-2 font-mono font-bold text-xs text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">radio_button_checked</span>
+<span>WH-01-ZA-RK04-B01</span>
+</td>
+<td class="px-3 py-2">
+<span class="font-title-sm text-title-sm text-on-surface">Zone A</span>
+<span class="text-[11px] text-outline block">Aisle 02 · Level 1</span>
+</td>
+<td class="px-3 py-2 text-on-surface-variant font-mono text-[11px]">Industrial Beam</td>
+<td class="px-3 py-2">
+<div class="flex items-center gap-1">
+<span class="font-mono font-medium text-xs text-on-surface">SKU-ST-9921</span>
+<span class="text-[11px] text-outline">+1 more</span>
+</div>
+<span class="text-[10px] text-outline">Industrial Steel Rods 250mm</span>
+</td>
+<td class="px-3 py-2 text-right font-mono text-xs">
+<div class="font-bold text-on-surface">1,740 / 2,000 kg</div>
+<span class="text-[10px] text-outline">4.2 m³ / 5.18 m³</span>
+</td>
+<td class="px-3 py-2">
+<div class="flex items-center gap-2">
+<div class="w-16 bg-surface-container h-1.5 rounded overflow-hidden">
+<div class="bg-amber-500 h-full rounded" style="width: 87%"></div>
+</div>
+<span class="font-mono text-xs font-bold text-amber-700">87.0%</span>
+</div>
+</td>
+<td class="px-3 py-2">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-semibold bg-amber-500/10 text-amber-700 border border-amber-500/20">
+<span class="w-1 h-1 rounded-full bg-amber-600"></span>
+<span>Near Cap</span>
+</span>
+</td>
+<td class="px-3 py-2 text-center">
+<button class="p-1 hover:text-primary rounded text-outline" title="Inspect Location Specs" type="button">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="px-3 py-2">
+<input class="rounded border-outline-variant text-primary focus:ring-0" type="checkbox">
+</td>
+<td class="px-3 py-2 font-mono font-bold text-xs text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-outline">radio_button_unchecked</span>
+<span>WH-01-ZA-RK04-B02</span>
+</td>
+<td class="px-3 py-2">
+<span class="font-title-sm text-title-sm text-on-surface">Zone A</span>
+<span class="text-[11px] text-outline block">Aisle 02 · Level 2</span>
+</td>
+<td class="px-3 py-2 text-on-surface-variant font-mono text-[11px]">Industrial Beam</td>
+<td class="px-3 py-2">
+<span class="font-mono font-medium text-xs text-on-surface">SKU-CU-1090</span>
+<span class="text-[10px] text-outline block">Copper Alloy Sheets 4x8</span>
+</td>
+<td class="px-3 py-2 text-right font-mono text-xs">
+<div class="font-bold text-on-surface">890 / 2,000 kg</div>
+<span class="text-[10px] text-outline">2.1 m³ / 5.18 m³</span>
+</td>
+<td class="px-3 py-2">
+<div class="flex items-center gap-2">
+<div class="w-16 bg-surface-container h-1.5 rounded overflow-hidden">
+<div class="bg-tertiary h-full rounded" style="width: 44.5%"></div>
+</div>
+<span class="font-mono text-xs font-semibold text-tertiary">44.5%</span>
+</div>
+</td>
+<td class="px-3 py-2">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-semibold bg-tertiary/10 text-tertiary border border-tertiary/20">
+<span class="w-1 h-1 rounded-full bg-tertiary"></span>
+<span>Available</span>
+</span>
+</td>
+<td class="px-3 py-2 text-center">
+<button class="p-1 hover:text-primary rounded text-outline" title="Inspect Location Specs" type="button">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="px-3 py-2">
+<input class="rounded border-outline-variant text-primary focus:ring-0" type="checkbox">
+</td>
+<td class="px-3 py-2 font-mono font-bold text-xs text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-outline">radio_button_unchecked</span>
+<span>WH-01-ZA-RK05-B01</span>
+</td>
+<td class="px-3 py-2">
+<span class="font-title-sm text-title-sm text-on-surface">Zone A</span>
+<span class="text-[11px] text-outline block">Aisle 02 · Level 1</span>
+</td>
+<td class="px-3 py-2 text-on-surface-variant font-mono text-[11px]">Industrial Beam</td>
+<td class="px-3 py-2">
+<span class="font-mono font-medium text-xs text-on-surface">SKU-TI-0044</span>
+<span class="text-[10px] text-outline block">Titanium Fastener Boxes (M8)</span>
+</td>
+<td class="px-3 py-2 text-right font-mono text-xs">
+<div class="font-bold text-on-surface">1,980 / 2,000 kg</div>
+<span class="text-[10px] text-outline">4.9 m³ / 5.18 m³</span>
+</td>
+<td class="px-3 py-2">
+<div class="flex items-center gap-2">
+<div class="w-16 bg-surface-container h-1.5 rounded overflow-hidden">
+<div class="bg-error h-full rounded" style="width: 99%"></div>
+</div>
+<span class="font-mono text-xs font-bold text-error">99.0%</span>
+</div>
+</td>
+<td class="px-3 py-2">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-semibold bg-error/10 text-error border border-error/20">
+<span class="w-1 h-1 rounded-full bg-error"></span>
+<span>Critical Max</span>
+</span>
+</td>
+<td class="px-3 py-2 text-center">
+<button class="p-1 hover:text-primary rounded text-outline" title="Inspect Location Specs" type="button">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="px-3 py-2">
+<input class="rounded border-outline-variant text-primary focus:ring-0" type="checkbox">
+</td>
+<td class="px-3 py-2 font-mono font-bold text-xs text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-outline">radio_button_unchecked</span>
+<span>WH-01-ZB-BAY02</span>
+</td>
+<td class="px-3 py-2">
+<span class="font-title-sm text-title-sm text-on-surface">Zone B</span>
+<span class="text-[11px] text-outline block">Bulk Staging Floor</span>
+</td>
+<td class="px-3 py-2 text-on-surface-variant font-mono text-[11px]">Floor Pallet Bay</td>
+<td class="px-3 py-2">
+<span class="font-mono font-medium text-xs text-on-surface">SKU-AL-7075</span>
+<span class="text-[10px] text-outline block">Aerospace Aluminum Ingots</span>
+</td>
+<td class="px-3 py-2 text-right font-mono text-xs">
+<div class="font-bold text-on-surface">9,200 / 10,000 kg</div>
+<span class="text-[10px] text-outline">18.4 m³ / 20.0 m³</span>
+</td>
+<td class="px-3 py-2">
+<div class="flex items-center gap-2">
+<div class="w-16 bg-surface-container h-1.5 rounded overflow-hidden">
+<div class="bg-amber-500 h-full rounded" style="width: 92%"></div>
+</div>
+<span class="font-mono text-xs font-bold text-amber-700">92.0%</span>
+</div>
+</td>
+<td class="px-3 py-2">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-semibold bg-amber-500/10 text-amber-700 border border-amber-500/20">
+<span class="w-1 h-1 rounded-full bg-amber-600"></span>
+<span>Near Cap</span>
+</span>
+</td>
+<td class="px-3 py-2 text-center">
+<button class="p-1 hover:text-primary rounded text-outline" title="Inspect Location Specs" type="button">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="px-3 py-2">
+<input class="rounded border-outline-variant text-primary focus:ring-0" type="checkbox">
+</td>
+<td class="px-3 py-2 font-mono font-bold text-xs text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-outline">radio_button_unchecked</span>
+<span>WH-01-ZC-CR08</span>
+</td>
+<td class="px-3 py-2">
+<span class="font-title-sm text-title-sm text-on-surface">Zone C</span>
+<span class="text-[11px] text-outline block">Cleanroom Optics · Rack 01</span>
+</td>
+<td class="px-3 py-2 text-on-surface-variant font-mono text-[11px]">High-Density Bin</td>
+<td class="px-3 py-2">
+<span class="font-mono font-medium text-xs text-on-surface">SKU-OP-4421</span>
+<span class="text-[10px] text-outline block">Coated Optical Lenses (50mm)</span>
+</td>
+<td class="px-3 py-2 text-right font-mono text-xs">
+<div class="font-bold text-on-surface">18 / 120 kg</div>
+<span class="text-[10px] text-outline">0.08 m³ / 0.45 m³</span>
+</td>
+<td class="px-3 py-2">
+<div class="flex items-center gap-2">
+<div class="w-16 bg-surface-container h-1.5 rounded overflow-hidden">
+<div class="bg-tertiary h-full rounded" style="width: 15%"></div>
+</div>
+<span class="font-mono text-xs font-semibold text-tertiary">15.0%</span>
+</div>
+</td>
+<td class="px-3 py-2">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-semibold bg-tertiary/10 text-tertiary border border-tertiary/20">
+<span class="w-1 h-1 rounded-full bg-tertiary"></span>
+<span>Available</span>
+</span>
+</td>
+<td class="px-3 py-2 text-center">
+<button class="p-1 hover:text-primary rounded text-outline" title="Inspect Location Specs" type="button">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination & Bulk Action Footer -->
+<div class="p-3 border-t border-outline-variant flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+<div class="flex items-center gap-2 text-outline">
+<span>Showing 1-5 of 120 Bins in Selected View</span>
+<span>·</span>
+<span class="text-on-surface font-semibold">1 Bin selected for Inspector</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2 py-1 bg-surface-container-low border border-outline-variant rounded hover:bg-surface-container text-on-surface" type="button">Previous</button>
+<button class="px-2.5 py-1 bg-primary-container text-on-primary rounded font-bold" type="button">1</button>
+<button class="px-2.5 py-1 bg-surface-container-low border border-outline-variant rounded hover:bg-surface-container text-on-surface" type="button">2</button>
+<button class="px-2.5 py-1 bg-surface-container-low border border-outline-variant rounded hover:bg-surface-container text-on-surface" type="button">3</button>
+<button class="px-2 py-1 bg-surface-container-low border border-outline-variant rounded hover:bg-surface-container text-on-surface" type="button">Next</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Location & Bin Inspector Panel (Side Drawer Pattern) -->
+<div class="w-full xl:w-[420px] shrink-0 space-y-4">
+<!-- Sticky Inspector Card -->
+<div class="bg-surface-container-lowest rounded border border-outline-variant shadow-sm flex flex-col">
+<!-- Inspector Header -->
+<div class="p-4 border-b border-outline-variant bg-surface-container-low/50">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Location Inspector</span>
+<div class="flex items-center gap-1">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-semibold bg-amber-500/10 text-amber-700 border border-amber-500/20">
+<span class="w-1 h-1 rounded-full bg-amber-600"></span>
+<span>Near Limit (87.0%)</span>
+</span>
+<button class="text-outline hover:text-on-surface p-1 rounded" title="Pin drawer" type="button">
+<span class="material-symbols-outlined text-sm">push_pin</span>
+</button>
+</div>
+</div>
+<div class="mt-2">
+<h2 class="font-headline-sm text-headline-sm font-mono text-primary font-bold">WH-01-ZA-RK04-B01</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">
+              Sector A · Aisle 02 · High-Bay Rack 04 · Level 1 Ground
+            </p>
+</div>
+<!-- Quick Action Bar -->
+<div class="grid grid-cols-4 gap-1.5 mt-3 pt-3 border-t border-outline-variant">
+<button class="flex flex-col items-center justify-center p-1.5 rounded hover:bg-surface-container text-on-surface-variant transition-colors text-center" title="Print Barcode" type="button">
+<span class="material-symbols-outlined text-base text-primary">barcode</span>
+<span class="font-label-sm text-[10px] mt-0.5">Print Tag</span>
+</button>
+<button class="flex flex-col items-center justify-center p-1.5 rounded hover:bg-surface-container text-on-surface-variant transition-colors text-center" title="Edit Bin Specs" type="button">
+<span class="material-symbols-outlined text-base text-secondary">tune</span>
+<span class="font-label-sm text-[10px] mt-0.5">Edit Specs</span>
+</button>
+<button class="flex flex-col items-center justify-center p-1.5 rounded hover:bg-surface-container text-on-surface-variant transition-colors text-center" title="Relocate SKUs" type="button">
+<span class="material-symbols-outlined text-base text-secondary">sync_alt</span>
+<span class="font-label-sm text-[10px] mt-0.5">Relocate</span>
+</button>
+<button class="flex flex-col items-center justify-center p-1.5 rounded hover:bg-error-container text-on-surface-variant hover:text-error transition-colors text-center" title="Lock for Maintenance" type="button">
+<span class="material-symbols-outlined text-base">lock</span>
+<span class="font-label-sm text-[10px] mt-0.5">Lock Bin</span>
+</button>
+</div>
+</div>
+<div class="p-4 space-y-4 max-h-[calc(100vh-280px)] overflow-y-auto">
+<!-- Barcode & Auto-ID Scanner Block -->
+<div class="p-3 bg-surface-container-low rounded border border-outline-variant flex flex-col items-center">
+<span class="font-label-sm text-[10px] text-outline uppercase tracking-wider mb-1 font-mono">Automated ID Wedge · Code 128 Compliant</span>
+<!-- SVG Vector Barcode Visual Representation -->
+<div class="bg-surface-container-lowest p-2 rounded border border-outline-variant w-full flex flex-col items-center">
+<svg class="h-10 w-48 text-on-surface" fill="currentColor" viewBox="0 0 160 40">
+<!-- Code 128 SVG Simulation -->
+<rect height="40" width="3" x="0" y="0"></rect>
+<rect height="40" width="2" x="5" y="0"></rect>
+<rect height="40" width="5" x="9" y="0"></rect>
+<rect height="40" width="1" x="16" y="0"></rect>
+<rect height="40" width="4" x="19" y="0"></rect>
+<rect height="40" width="2" x="25" y="0"></rect>
+<rect height="40" width="6" x="29" y="0"></rect>
+<rect height="40" width="2" x="38" y="0"></rect>
+<rect height="40" width="4" x="42" y="0"></rect>
+<rect height="40" width="1" x="48" y="0"></rect>
+<rect height="40" width="5" x="52" y="0"></rect>
+<rect height="40" width="3" x="59" y="0"></rect>
+<rect height="40" width="4" x="65" y="0"></rect>
+<rect height="40" width="2" x="71" y="0"></rect>
+<rect height="40" width="5" x="75" y="0"></rect>
+<rect height="40" width="3" x="83" y="0"></rect>
+<rect height="40" width="1" x="88" y="0"></rect>
+<rect height="40" width="6" x="91" y="0"></rect>
+<rect height="40" width="2" x="100" y="0"></rect>
+<rect height="40" width="4" x="104" y="0"></rect>
+<rect height="40" width="3" x="110" y="0"></rect>
+<rect height="40" width="5" x="116" y="0"></rect>
+<rect height="40" width="1" x="123" y="0"></rect>
+<rect height="40" width="4" x="126" y="0"></rect>
+<rect height="40" width="2" x="133" y="0"></rect>
+<rect height="40" width="6" x="137" y="0"></rect>
+<rect height="40" width="3" x="146" y="0"></rect>
+<rect height="40" width="2" x="151" y="0"></rect>
+<rect height="40" width="4" x="156" y="0"></rect>
+</svg>
+<span class="font-mono text-xs tracking-widest text-on-surface font-bold mt-1">*LOC-WH01-ZA-04-01*</span>
+</div>
+<button class="mt-2 text-xs font-title-sm text-primary hover:underline flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">print</span>
+<span>1-Click Print Zebra ZPL Tag (4x6)</span>
+</button>
+</div>
+<!-- Physical & Dimensional Limits -->
+<div class="space-y-2">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Physical &amp; Dimensional Specifications</span>
+<div class="grid grid-cols-2 gap-2 text-xs">
+<div class="bg-surface-container-low p-2 rounded border border-outline-variant">
+<span class="text-outline text-[11px] block">Dimensions (W x D x H)</span>
+<span class="font-mono font-bold text-on-surface">240 x 120 x 180 cm</span>
+<span class="text-[10px] text-outline block mt-0.5">Total: 5.18 m³</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded border border-outline-variant">
+<span class="text-outline text-[11px] block">Max Weight Rating</span>
+<span class="font-mono font-bold text-on-surface">2,000 kg</span>
+<span class="text-[10px] text-amber-700 font-semibold block mt-0.5">Current: 1,740 kg (87%)</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded border border-outline-variant">
+<span class="text-outline text-[11px] block">Storage Structure</span>
+<span class="font-title-sm text-title-sm text-on-surface">Heavy Beam Rack</span>
+<span class="text-[10px] text-outline block mt-0.5">Bolted C-Channel</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded border border-outline-variant">
+<span class="text-outline text-[11px] block">Velocity Strategy</span>
+<span class="font-title-sm text-title-sm text-primary font-bold">Class A · Fast Mover</span>
+<span class="text-[10px] text-outline block mt-0.5">High Putaway Turnover</span>
+</div>
+</div>
+</div>
+<!-- Currently Stored SKUs inside this Bin -->
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Stored Inventory (2 SKUs)</span>
+<span class="font-mono text-xs text-on-surface font-bold">1,740 kg total</span>
+</div>
+<!-- SKU Card 1 -->
+<div class="p-2.5 bg-surface-container-low rounded border border-outline-variant space-y-1.5">
+<div class="flex items-center justify-between">
+<span class="font-mono font-bold text-xs text-primary">SKU-ST-9921</span>
+<span class="font-mono text-xs font-bold text-on-surface">1,240 kg</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface font-medium leading-tight">
+                Industrial Steel Rods 250mm
+              </div>
+<div class="flex items-center justify-between text-[11px] pt-1 border-t border-outline-variant text-outline">
+<span>Lot: LOT-2024-B11</span>
+<span class="text-primary font-medium">Allocated for SO-88214</span>
+</div>
+</div>
+<!-- SKU Card 2 -->
+<div class="p-2.5 bg-surface-container-low rounded border border-outline-variant space-y-1.5">
+<div class="flex items-center justify-between">
+<span class="font-mono font-bold text-xs text-primary">SKU-CU-4410</span>
+<span class="font-mono text-xs font-bold text-on-surface">500 kg</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface font-medium leading-tight">
+                Heavy Copper Wire 12 AWG (1000m Spools)
+              </div>
+<div class="flex items-center justify-between text-[11px] pt-1 border-t border-outline-variant text-outline">
+<span>Lot: LOT-2024-C02</span>
+<span class="text-tertiary font-medium">Buffer Stock (Unreserved)</span>
+</div>
+</div>
+</div>
+<!-- Environmental & Access Constraints -->
+<div class="space-y-2">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Operational &amp; Handling Constraints</span>
+<div class="p-2.5 bg-surface-container-low rounded border border-outline-variant space-y-2 text-xs">
+<div class="flex items-center justify-between">
+<span class="text-outline">Forklift Accessibility:</span>
+<span class="font-medium text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary">forklift</span>
+<span>Reach Truck Only (Raymond FL-04)</span>
+</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-outline">Thermal / Environment:</span>
+<span class="font-medium text-on-surface">Ambient (18°C – 24°C) · &lt;60% RH</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-outline">Hazardous Class (HazMat):</span>
+<span class="font-medium text-on-surface">None · Standard Non-Combustible</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-outline">Fire Sprinkler Clearance:</span>
+<span class="font-medium text-tertiary">Verified (65cm clearance compliant)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Inspector Drawer Footer Actions -->
+<div class="p-4 border-t border-outline-variant bg-surface-container-lowest flex flex-col gap-2">
+<button class="w-full h-8 bg-primary-container hover:bg-primary text-on-primary font-title-sm text-title-sm rounded flex items-center justify-center gap-1.5 transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-base">save</span>
+<span>Save Location Parameters</span>
+</button>
+<div class="flex items-center gap-2">
+<button class="flex-1 h-8 bg-surface-container-low hover:bg-surface-container text-on-surface border border-outline-variant rounded font-title-sm text-title-sm transition-colors" type="button">
+              Reassign Zone
+            </button>
+<button class="h-8 px-3 text-error hover:bg-error-container rounded font-title-sm text-title-sm transition-colors" title="Decommission this Bin from the Warehouse Floor" type="button">
+              Decommission
+            </button>
+</div>
+</div>
+</div>
+<!-- Quick Facility Metadata Card -->
+<div class="bg-surface-container-lowest rounded border border-outline-variant p-4 text-xs space-y-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline uppercase font-semibold">
+<span>Aisle 02 Real-time Telemetry</span>
+<span class="text-tertiary font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span> Sensor OK
+          </span>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1 font-mono text-[11px]">
+<div class="bg-surface-container-low p-2 rounded">
+<span class="text-outline text-[10px] block">Rack Temp</span>
+<span class="font-bold text-on-surface">20.4 °C</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded">
+<span class="text-outline text-[10px] block">Vibration / Load Strain</span>
+<span class="font-bold text-tertiary">0.02 G (Nominal)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

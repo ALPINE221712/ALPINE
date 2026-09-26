@@ -1,0 +1,735 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"background":"#faf8ff","on-secondary":"#ffffff","primary-container":"#1d4ed8","outline":"#747686","on-primary-fixed-variant":"#0039b5","secondary-fixed":"#d5e3fc","surface":"#faf8ff","primary":"#0037b0","on-error":"#ffffff","on-secondary-fixed-variant":"#3a485b","primary-fixed-dim":"#b7c4ff","error":"#ba1a1a","surface-container-highest":"#dae2fd","surface-container-high":"#e2e7ff","primary-fixed":"#dce1ff","tertiary-fixed-dim":"#68dba9","inverse-surface":"#283044","surface-container":"#eaedff","on-error-container":"#93000a","on-tertiary-container":"#76eab6","on-primary":"#ffffff","on-background":"#131b2e","error-container":"#ffdad6","outline-variant":"#c4c5d7","surface-tint":"#2151da","on-secondary-container":"#57657a","inverse-on-surface":"#eef0ff","on-secondary-fixed":"#0d1c2e","surface-bright":"#faf8ff","inverse-primary":"#b7c4ff","on-tertiary-fixed-variant":"#005137","secondary-fixed-dim":"#b9c7df","surface-variant":"#dae2fd","secondary":"#515f74","surface-container-lowest":"#ffffff","tertiary":"#004f35","on-primary-container":"#cad3ff","on-tertiary-fixed":"#002114","on-primary-fixed":"#001551","tertiary-fixed":"#85f8c4","on-surface":"#131b2e","surface-container-low":"#f2f3ff","on-tertiary":"#ffffff","surface-dim":"#d2d9f4","on-surface-variant":"#434655","tertiary-container":"#006948","secondary-container":"#d5e3fc"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin":"1rem","space-md":"0.5rem","space-sm":"0.25rem","space-xl":"1rem","space-lg":"0.75rem","space-xs":"0.125rem","gutter":"0.75rem"},"fontFamily":{"headline-lg":["Inter"],"title-md":["Inter"],"label-sm":["Inter"],"title-sm":["Inter"],"label-md":["Inter"],"headline-sm":["Inter"],"headline-md":["Inter"],"tabular-kpi":["Inter"],"tabular-body":["Inter"],"body-sm":["Inter"],"body-md":["Inter"]},"fontSize":{"headline-lg":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"title-md":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"-0.005em","fontWeight":"600"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.04em","fontWeight":"600"}],"title-sm":["0.8125rem",{"lineHeight":"1.125rem","letterSpacing":"0em","fontWeight":"600"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"600"}],"headline-sm":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-md":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"600"}],"tabular-kpi":["1.75rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"700"}],"tabular-body":["0.8125rem",{"lineHeight":"1.125rem","letterSpacing":"-0.005em","fontWeight":"500"}],"body-sm":["0.8125rem",{"lineHeight":"1.125rem","letterSpacing":"0em","fontWeight":"400"}],"body-md":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"400"}]}}}</script></head><body class="bg-surface-container-low font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest border-r border-outline-variant z-50 flex flex-col justify-between select-none"><div class="flex flex-col min-h-0"><div class="h-14 px-4 flex items-center justify-between border-b border-outline-variant bg-surface-container-lowest"><div class="flex items-center gap-space-md min-w-0"><img alt="StockSense Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XifryD1c-SkFjJE1VkwG_RHRWu0KOzpsgN2mfbO40fg6qxuWlsw3nR9pYLCQZviZs_e7RiM5SCx7cetjSWz3-6jv-Xw8J4HPzKH6pXxO4dymnLalYEmZxt717idCGla_1nb4RkQBr57XtESGfsMJp7qwOkRTkMeY6JkxAXMI9yDapDoMPfDUSgRfDzUtyndy41ROzgF1zXYFA682NquJvrH5Xv3mK_9eOQ91JmG4fjB7q53otWVZEvc08"><div class="flex flex-col min-w-0"><span class="font-title-sm text-title-sm text-on-surface truncate">StockSense</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">Enterprise IMS</span></div></div></div><div class="px-4 py-space-md border-b border-outline-variant bg-surface-container-low"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-sm text-primary">warehouse</span><span class="font-label-md text-label-md text-on-surface font-semibold">WH-01</span></div><span class="font-label-sm text-label-sm bg-secondary-container text-on-secondary-container px-space-sm py-space-xs rounded">Main Facility</span></div></div><div class="flex-1 overflow-y-auto px-3 py-space-md space-y-space-lg"><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-title-sm"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded transition-colors text-on-surface-variant" data-path="dashboard" href="#"><span class="material-symbols-outlined text-base">dashboard</span><span>Dashboard</span></a></nav><div class="space-y-space-xs"><div class="px-space-md py-space-xs font-label-sm text-label-sm uppercase text-outline tracking-wider font-semibold">Inventory</div><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-title-sm"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="products" href="#"><span class="material-symbols-outlined text-base">inventory_2</span><span>Products</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="stock-overview" href="#"><span class="material-symbols-outlined text-base">monitoring</span><span>Stock Overview</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-md py-space-xs font-label-sm text-label-sm uppercase text-outline tracking-wider font-semibold">Operations</div><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-title-sm"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="receipts" href="#"><span class="material-symbols-outlined text-base">call_received</span><span>Receipts</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="deliveries" href="#"><span class="material-symbols-outlined text-base">local_shipping</span><span>Deliveries</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="transfers" href="#"><span class="material-symbols-outlined text-base">sync_alt</span><span>Transfers</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="adjustments" href="#"><span class="material-symbols-outlined text-base">tune</span><span>Adjustments</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="move-history" href="#"><span class="material-symbols-outlined text-base">receipt_long</span><span>Move History</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-md py-space-xs font-label-sm text-label-sm uppercase text-outline tracking-wider font-semibold">Settings</div><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-title-sm"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="warehouses" href="#"><span class="material-symbols-outlined text-base">store</span><span>Warehouses</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-base">settings</span><span>Settings</span></a></nav></div></div></div><div class="p-3 border-t border-outline-variant bg-surface-container-lowest"><div class="flex items-center justify-between gap-space-sm p-space-sm rounded hover:bg-surface-container-low transition-colors"><div class="flex items-center gap-space-sm min-w-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKDUZgZKMdPT-CFzSWlMKR8BQuTj8Qz1Myp8wtqRRXc-TqrhEvbdgyIqXc0kWrZvJk9qN9Sq7SUfTnBqij8gdVYegsqoAtqbz1eS0HdThiILORSSe7kakWdPvOSFRHVy3d6IGs3sQAC6FOh3XhlT94iEGd4vXGyriMfPgKRSXyhWVt0FAyTa2Di5Fz-n6IXQjKQLrrL0SNHJMjygeYOuLvzdMUWGdRjzdoxx4C4Uw5PqP-bpHU4yIe"><div class="flex flex-col min-w-0"><span class="font-title-sm text-title-sm text-on-surface truncate leading-tight">Marcus Vance</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Operations Manager</span></div></div><button class="p-1 text-on-surface-variant hover:text-error hover:bg-error-container rounded transition-colors" title="Sign out" type="button"><span class="material-symbols-outlined text-base">logout</span></button></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-container-lowest border-b border-outline-variant z-40 px-6 flex items-center justify-between"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant"><span class="material-symbols-outlined text-sm">domain</span><span class="text-outline">StockSense</span><span class="text-outline">/</span><button class="flex items-center gap-space-xs font-title-sm text-title-sm text-on-surface hover:text-primary transition-colors"><span>All Locations / Main Warehouse</span><span class="material-symbols-outlined text-sm">expand_more</span></button></div></div><div class="flex-1 max-w-md mx-6"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-2.5 text-base text-outline pointer-events-none">search</span><input class="w-full h-8 pl-8 pr-12 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:bg-surface-container-lowest" placeholder="Search SKU, Product, PO#, or Delivery..." type="text"><div class="absolute right-2 flex items-center gap-space-xs pointer-events-none"><kbd class="font-label-sm text-label-sm bg-surface-container px-1 py-0.5 rounded text-on-surface-variant border border-outline-variant">⌘K</kbd></div></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-2 py-1 rounded bg-surface-container font-label-sm text-label-sm text-tertiary font-medium"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container animate-pulse"></span><span>Sync: Live 1s ago</span></div><div class="h-4 w-px bg-outline-variant"></div><button class="relative p-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded transition-colors" title="Notifications" type="button"><span class="material-symbols-outlined text-base">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-primary ring-2 ring-surface-container-lowest"></span></button><button class="h-8 px-space-lg bg-primary-container hover:bg-primary text-on-primary font-title-sm text-title-sm rounded flex items-center gap-space-xs transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-base">add</span><span>New Action</span><span class="material-symbols-outlined text-xs">arrow_drop_down</span></button></div></header><main class="w-full pt-14 bg-surface-container-low min-h-screen"><div class="flex flex-col w-full">
+<div class="flex flex-col gap-space-lg p-space-lg w-full max-w-[1720px] mx-auto">
+<!-- Screen Header Section -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+<span class="material-symbols-outlined text-xs">inventory_2</span>
+            Purchase Orders &amp; Receiving
+          </span>
+<span class="font-label-sm text-label-sm text-outline">Terminal ID: INB-STATION-04</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+            Barcode Wedge: Ready
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Receipts &amp; Inbound Shipments</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-3xl">
+          Process incoming vendor shipments, verify physical quantities against POs, inspect quality, and allocate goods to warehouse bins.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap self-start md:self-auto">
+<button class="h-8 px-space-md bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm rounded flex items-center gap-space-xs transition-colors shadow-sm" onclick="triggerBarcodeScanModal()" type="button">
+<span class="material-symbols-outlined text-base text-primary">barcode_scanner</span>
+<span>Scan ASN / Barcode</span>
+<kbd class="font-label-sm text-label-sm bg-surface-container-highest px-1 py-0.2 rounded text-on-surface-variant">F2</kbd>
+</button>
+<button class="h-8 px-space-md bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm rounded flex items-center gap-space-xs transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-base">download</span>
+<span>Export Manifest</span>
+</button>
+<button class="h-8 px-space-lg bg-primary-container hover:bg-primary text-on-primary font-title-sm text-title-sm rounded flex items-center gap-space-xs transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-base">add</span>
+<span>+ Create Receipt</span>
+</button>
+</div>
+</div>
+<!-- 4-Column KPI Workflow Summary Bar -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Awaiting Arrival</span>
+<span class="font-tabular-kpi text-tabular-kpi text-on-surface mt-1">6 Shipments</span>
+</div>
+<div class="w-9 h-9 rounded bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-lg">local_shipping</span>
+</div>
+</div>
+<div class="mt-3 flex items-center justify-between font-body-sm text-body-sm pt-2">
+<span class="text-on-surface-variant">Est. 4,850 units expected</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold bg-primary-fixed px-1.5 py-0.5 rounded">2 Arriving Today</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">In Inspection / Staging</span>
+<span class="font-tabular-kpi text-tabular-kpi text-on-surface mt-1">3 Shipments</span>
+</div>
+<div class="w-9 h-9 rounded bg-secondary-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-lg">fact_check</span>
+</div>
+</div>
+<div class="mt-3 flex items-center justify-between font-body-sm text-body-sm pt-2">
+<span class="text-on-surface-variant">Active Docks</span>
+<span class="font-tabular-body text-tabular-body text-on-surface font-semibold">Dock 02 &amp; Dock 04</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Completed Today</span>
+<span class="font-tabular-kpi text-tabular-kpi text-tertiary mt-1">14 Receipts</span>
+</div>
+<div class="w-9 h-9 rounded bg-surface-container-high flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+</div>
+</div>
+<div class="mt-3 flex items-center justify-between font-body-sm text-body-sm pt-2">
+<span class="text-on-surface-variant">Throughput rate</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">+12,400 units processed</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-error uppercase tracking-wider">Variance / Discrepancies</span>
+<span class="font-tabular-kpi text-tabular-kpi text-error mt-1">1 Flagged</span>
+</div>
+<div class="w-9 h-9 rounded bg-error-container flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined text-lg">warning</span>
+</div>
+</div>
+<div class="mt-3 flex items-center justify-between font-body-sm text-body-sm pt-2">
+<span class="text-on-surface-variant">Active investigation</span>
+<span class="font-label-sm text-label-sm text-error font-semibold bg-error-container px-1.5 py-0.5 rounded">PO-9942 short 25 units</span>
+</div>
+</div>
+</div>
+<!-- Filter & Operational Toolbar -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-md">
+<!-- Top Tab Row -->
+<div class="flex items-center justify-between gap-space-md flex-wrap">
+<div class="flex items-center gap-1 overflow-x-auto py-0.5">
+<button class="h-7 px-3 rounded font-title-sm text-title-sm bg-primary-container text-on-primary">
+            All Receipts <span class="ml-1 opacity-90">(24)</span>
+</button>
+<button class="h-7 px-3 rounded font-title-sm text-title-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface">
+            Draft <span class="ml-1 text-outline">(2)</span>
+</button>
+<button class="h-7 px-3 rounded font-title-sm text-title-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface">
+            Waiting / Inbound <span class="ml-1 text-outline">(6)</span>
+</button>
+<button class="h-7 px-3 rounded font-title-sm text-title-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface">
+            Ready for Receiving <span class="ml-1 text-primary-container font-semibold">(3)</span>
+</button>
+<button class="h-7 px-3 rounded font-title-sm text-title-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface">
+            Done / Validated <span class="ml-1 text-outline">(11)</span>
+</button>
+<button class="h-7 px-3 rounded font-title-sm text-title-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface">
+            Canceled <span class="ml-1 text-outline">(2)</span>
+</button>
+</div>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Auto-sync ASN EDI
+          </span>
+<span class="text-outline">|</span>
+<button class="text-primary hover:underline font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-sm">refresh</span> Refresh Stream
+          </button>
+</div>
+</div>
+<!-- Bottom Filter Inputs Row -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-sm pt-2">
+<div class="md:col-span-4 relative flex items-center">
+<span class="material-symbols-outlined absolute left-2.5 text-base text-outline pointer-events-none">search</span>
+<input class="w-full h-8 pl-8 pr-3 bg-surface-container-low rounded font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest" placeholder="Search Receipt #, PO, Supplier, BOL, or SKU..." type="text">
+</div>
+<div class="md:col-span-8 flex items-center gap-space-sm flex-wrap justify-between md:justify-end">
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="h-8 px-2.5 bg-surface-container-low hover:bg-surface-container text-on-surface font-title-sm text-title-sm rounded flex items-center gap-1 text-left">
+<span class="text-outline font-normal">WH:</span>
+<span>All Facilities</span>
+<span class="material-symbols-outlined text-sm text-outline">expand_more</span>
+</button>
+<button class="h-8 px-2.5 bg-surface-container-low hover:bg-surface-container text-on-surface font-title-sm text-title-sm rounded flex items-center gap-1 text-left">
+<span class="text-outline font-normal">Supplier:</span>
+<span>All Vendors</span>
+<span class="material-symbols-outlined text-sm text-outline">expand_more</span>
+</button>
+<button class="h-8 px-2.5 bg-surface-container-low hover:bg-surface-container text-on-surface font-title-sm text-title-sm rounded flex items-center gap-1 text-left">
+<span class="text-outline font-normal">Range:</span>
+<span>This Week</span>
+<span class="material-symbols-outlined text-sm text-outline">calendar_today</span>
+</button>
+</div>
+<button class="h-8 px-2.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded font-title-sm text-title-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">filter_alt_off</span>
+<span>Reset</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Content: Split Master Table & Active Receiving Inspection Panel -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-start">
+<!-- LEFT: Primary Inbound Receipts Table (7 cols on lg, 6 on 2xl) -->
+<div class="lg:col-span-7 2xl:col-span-6 bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="px-space-md py-2.5 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface">Incoming Manifests &amp; Staged POs</span>
+<span class="font-label-sm text-label-sm bg-surface-container px-1.5 py-0.5 rounded text-on-surface-variant">Showing 4 of 24</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<button class="p-1 hover:text-on-surface hover:bg-surface-container rounded" title="Dense Mode Toggle">
+<span class="material-symbols-outlined text-base">density_medium</span>
+</button>
+<button class="p-1 hover:text-on-surface hover:bg-surface-container rounded" title="Column Config">
+<span class="material-symbols-outlined text-base">view_column</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-2 px-3 w-8">
+<input class="w-3.5 h-3.5 rounded bg-surface-container text-primary" type="checkbox">
+</th>
+<th class="py-2 px-3">Receipt / PO</th>
+<th class="py-2 px-3">Supplier</th>
+<th class="py-2 px-3">Expected Time</th>
+<th class="py-2 px-3">Destination</th>
+<th class="py-2 px-3">Lines / Units</th>
+<th class="py-2 px-3">Status</th>
+<th class="py-2 px-3 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low font-body-sm text-body-sm text-on-surface">
+<!-- Selected Active Row: REC-2024-0989 -->
+<tr class="bg-primary-fixed/30 hover:bg-primary-fixed/40 cursor-pointer transition-colors relative">
+<td class="py-2 px-3">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<input checked="" class="w-3.5 h-3.5 rounded text-primary" type="checkbox">
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-primary font-bold">REC-2024-0989</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">PO-77834</span>
+</div>
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col max-w-[140px]">
+<span class="font-title-sm text-title-sm truncate" title="NexaMetals Industrial Corp">NexaMetals Industrial</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tier-1 Direct</span>
+</div>
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-tabular-body text-tabular-body text-on-surface">Today 10:45 AM</span>
+<span class="font-label-sm text-label-sm text-tertiary">On Dock</span>
+</div>
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-tabular-body text-tabular-body">Main WH</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Dock 02</span>
+</div>
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-tabular-body text-tabular-body font-semibold">3 lines</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">700 units total</span>
+</div>
+</td>
+<td class="py-2 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm bg-secondary-container text-primary font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                    Receiving
+                  </span>
+</td>
+<td class="py-2 px-3 text-right">
+<button class="h-7 px-2 rounded bg-primary text-on-primary font-title-sm text-title-sm shadow-sm inline-flex items-center gap-1">
+<span>Inspect</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Ready for Receiving -->
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors">
+<td class="py-2 px-3">
+<input class="w-3.5 h-3.5 rounded text-primary" type="checkbox">
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">REC-2024-0988</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">PO-77821</span>
+</div>
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col max-w-[140px]">
+<span class="font-title-sm text-title-sm truncate" title="Apex Fasteners Ltd">Apex Fasteners Ltd</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hardware &amp; Fix</span>
+</div>
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-tabular-body text-tabular-body text-on-surface">Today 09:15 AM</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Unloaded</span>
+</div>
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-tabular-body text-tabular-body">Main WH</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Dock 04</span>
+</div>
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-tabular-body text-tabular-body font-semibold">1 line</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">14,500 pcs</span>
+</div>
+</td>
+<td class="py-2 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm bg-secondary-container text-primary font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    Ready
+                  </span>
+</td>
+<td class="py-2 px-3 text-right">
+<button class="h-7 px-2 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm inline-flex items-center gap-1">
+<span>Inspect</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Waiting / Inbound -->
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors">
+<td class="py-2 px-3">
+<input class="w-3.5 h-3.5 rounded text-primary" type="checkbox">
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">REC-2024-0992</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">PO-77840</span>
+</div>
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col max-w-[140px]">
+<span class="font-title-sm text-title-sm truncate" title="Global Poly Packaging">Global Poly Packaging</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Consumables</span>
+</div>
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-tabular-body text-tabular-body text-on-surface">Today 14:00 PM</span>
+<span class="font-label-sm text-label-sm text-outline">ETA En Route</span>
+</div>
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-tabular-body text-tabular-body">North Bay</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Bay 01</span>
+</div>
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-tabular-body text-tabular-body font-semibold">4 lines</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2,850 units</span>
+</div>
+</td>
+<td class="py-2 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                    Waiting
+                  </span>
+</td>
+<td class="py-2 px-3 text-right">
+<button class="h-7 px-2 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-title-sm text-title-sm inline-flex items-center gap-1">
+<span>View PO</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: Done / Validated -->
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors opacity-85">
+<td class="py-2 px-3">
+<input class="w-3.5 h-3.5 rounded text-primary" type="checkbox">
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">REC-2024-0995</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">PO-77812</span>
+</div>
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col max-w-[140px]">
+<span class="font-title-sm text-title-sm truncate" title="Precision Optics Inc">Precision Optics Inc</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Electronics</span>
+</div>
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-tabular-body text-tabular-body text-on-surface">Oct 25, 2024</span>
+<span class="font-label-sm text-label-sm text-tertiary">Verified 08:30</span>
+</div>
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-tabular-body text-tabular-body">Main WH</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Cleanroom A</span>
+</div>
+</td>
+<td class="py-2 px-3">
+<div class="flex flex-col">
+<span class="font-tabular-body text-tabular-body font-semibold">2 lines</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">120 units</span>
+</div>
+</td>
+<td class="py-2 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm bg-tertiary-container text-on-primary font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary"></span>
+                    Done
+                  </span>
+</td>
+<td class="py-2 px-3 text-right">
+<button class="h-7 px-2 rounded bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-title-sm text-title-sm inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">print</span>
+<span>Labels</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination Footer -->
+<div class="px-space-md py-2.5 bg-surface-container-lowest flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span>Rows per page:</span>
+<select class="h-6 px-1 bg-surface-container-low rounded text-on-surface font-title-sm text-title-sm">
+<option>10</option>
+<option selected="">25</option>
+<option>50</option>
+</select>
+<span class="text-outline">1–4 of 24 manifests</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-outline" disabled="">
+<span class="material-symbols-outlined text-base">first_page</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-outline" disabled="">
+<span class="material-symbols-outlined text-base">chevron_left</span>
+</button>
+<span class="px-2 font-tabular-body text-tabular-body text-on-surface font-semibold">1</span>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface">
+<span class="material-symbols-outlined text-base">chevron_right</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface">
+<span class="material-symbols-outlined text-base">last_page</span>
+</button>
+</div>
+</div>
+</div>
+<!-- RIGHT: Active Receipt Inspector & Multi-Line Receiving Form (5 cols on lg, 6 on 2xl) -->
+<div class="lg:col-span-5 2xl:col-span-6 bg-surface-container-lowest rounded-xl shadow-md flex flex-col overflow-hidden">
+<!-- Inspector Header -->
+<div class="p-space-md bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">REC-2024-0989</span>
+<span class="font-label-sm text-label-sm bg-secondary-container text-primary px-2 py-0.5 rounded font-semibold uppercase">
+                  Ready for Receiving
+                </span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Source Document: <span class="font-semibold text-primary">PO-77834</span> · Supplier: <strong class="text-on-surface">NexaMetals Industrial Corp</strong>
+</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface" title="Print Receiving Slip">
+<span class="material-symbols-outlined text-base">print</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface" title="Expand Full Screen">
+<span class="material-symbols-outlined text-base">open_in_full</span>
+</button>
+</div>
+</div>
+<!-- Logistics & BOL Meta Ribbon -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-2 bg-surface-container-lowest p-2 rounded">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Carrier</span>
+<span class="font-title-sm text-title-sm text-on-surface truncate">FreightWay Express</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">BOL Manifest #</span>
+<span class="font-title-sm text-title-sm text-on-surface font-mono">#FW-8839120</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Staged Bay</span>
+<span class="font-title-sm text-title-sm text-on-surface">Main WH / Dock 02</span>
+</div>
+</div>
+<!-- Step Progression Bar -->
+<div class="mt-1 pt-2 flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">check_circle</span> 1. Arrived
+              </span>
+<span class="text-primary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm animate-pulse">radio_button_checked</span> 2. Count &amp; Quality QC
+              </span>
+<span class="text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">radio_button_unchecked</span> 3. Putaway Binning
+              </span>
+<span class="text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">lock</span> 4. Post &amp; Stock
+              </span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden flex">
+<div class="w-1/4 bg-tertiary h-full"></div>
+<div class="w-1/4 bg-primary h-full"></div>
+<div class="w-1/2 bg-transparent h-full"></div>
+</div>
+</div>
+</div>
+<!-- Line Items Verification Section -->
+<div class="p-space-md flex flex-col gap-space-md flex-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-on-surface">Manifest Line Items (3 Lines)</span>
+<span class="font-label-sm text-label-sm text-outline">Scan or enter physically counted quantities</span>
+</div>
+<button class="h-6 px-2 bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">select_all</span>
+<span>Match All Qty</span>
+</button>
+</div>
+<!-- Line Verification Cards/List -->
+<div class="flex flex-col gap-2.5">
+<!-- Item 1: Matched Exact -->
+<div class="bg-surface-container-low rounded p-2.5 flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Copper Wire (12 AWG High Purity)</span>
+<span class="font-label-sm text-label-sm bg-surface-container px-1 rounded text-on-surface-variant font-mono">SKU-CU-4410</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Heavy industrial gauge electrical copper spool</span>
+</div>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary bg-surface-container-lowest px-2 py-0.5 rounded font-semibold shrink-0">
+<span class="material-symbols-outlined text-xs">check</span> Matched
+                </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2 items-center bg-surface-container-lowest p-2 rounded">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">PO Expected</span>
+<span class="font-tabular-body text-tabular-body font-semibold text-on-surface">400 m</span>
+</div>
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-primary font-semibold">Counted Qty</label>
+<div class="flex items-center gap-1 mt-0.5">
+<input class="h-7 w-20 px-2 bg-surface-container-low rounded font-tabular-body text-tabular-body font-bold text-on-surface text-center focus:outline-none focus:bg-surface-container" type="number" value="400">
+<span class="font-label-sm text-label-sm text-outline">meters</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Target Allocation Bin</span>
+<div class="flex items-center gap-1 mt-0.5 text-on-surface">
+<span class="material-symbols-outlined text-xs text-primary">pin_drop</span>
+<span class="font-title-sm text-title-sm font-semibold truncate">Bin E-12 (Aisle 4)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2: Matched Exact -->
+<div class="bg-surface-container-low rounded p-2.5 flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Industrial Steel Rods 25mm</span>
+<span class="font-label-sm text-label-sm bg-surface-container px-1 rounded text-on-surface-variant font-mono">SKU-ST-9921</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Cold-rolled structural alloy, bundle 5m lengths</span>
+</div>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary bg-surface-container-lowest px-2 py-0.5 rounded font-semibold shrink-0">
+<span class="material-symbols-outlined text-xs">check</span> Matched
+                </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2 items-center bg-surface-container-lowest p-2 rounded">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">PO Expected</span>
+<span class="font-tabular-body text-tabular-body font-semibold text-on-surface">250 kg</span>
+</div>
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-primary font-semibold">Counted Qty</label>
+<div class="flex items-center gap-1 mt-0.5">
+<input class="h-7 w-20 px-2 bg-surface-container-low rounded font-tabular-body text-tabular-body font-bold text-on-surface text-center focus:outline-none focus:bg-surface-container" type="number" value="250">
+<span class="font-label-sm text-label-sm text-outline">kg</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Target Allocation Bin</span>
+<div class="flex items-center gap-1 mt-0.5 text-on-surface">
+<span class="material-symbols-outlined text-xs text-primary">pin_drop</span>
+<span class="font-title-sm text-title-sm font-semibold truncate">Rack A-04</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 3: DISCREPANCY / SHORTAGE WARNING -->
+<div class="bg-error-container/30 rounded p-2.5 flex flex-col gap-2 relative">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Aluminium Sheets 2mm 4x8ft</span>
+<span class="font-label-sm text-label-sm bg-surface-container px-1 rounded text-on-surface-variant font-mono">SKU-AL-5519</span>
+</div>
+<span class="font-body-sm text-body-sm text-error font-medium mt-0.5">Shortage recorded (-2 units vs Manifest)</span>
+</div>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-error bg-surface-container-lowest px-2 py-0.5 rounded font-bold shrink-0">
+<span class="material-symbols-outlined text-xs">warning</span> Shortage -2
+                </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2 items-center bg-surface-container-lowest p-2 rounded">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">PO Expected</span>
+<span class="font-tabular-body text-tabular-body font-semibold text-on-surface">50 sheets</span>
+</div>
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-error font-semibold flex items-center justify-between">
+<span>Counted Qty</span>
+<span class="text-error font-bold">-2</span>
+</label>
+<div class="flex items-center gap-1 mt-0.5">
+<input class="h-7 w-20 px-2 bg-error-container text-on-error-container rounded font-tabular-body text-tabular-body font-bold text-center focus:outline-none" type="number" value="48">
+<span class="font-label-sm text-label-sm text-outline">sheets</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Target Allocation Bin</span>
+<div class="flex items-center gap-1 mt-0.5 text-on-surface">
+<span class="material-symbols-outlined text-xs text-primary">pin_drop</span>
+<span class="font-title-sm text-title-sm font-semibold truncate">Rack A-08</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quality Assurance Checklist & Discrepancy Memo -->
+<div class="bg-surface-container-low rounded p-space-md flex flex-col gap-space-sm mt-1">
+<span class="font-title-sm text-title-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-primary">verified</span>
+              Receiving QC Checklist &amp; Gate Notes
+            </span>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1">
+<label class="flex items-center gap-2 cursor-pointer text-on-surface font-body-sm text-body-sm">
+<input checked="" class="w-3.5 h-3.5 rounded text-primary" type="checkbox">
+<span>Pallet seals intact</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer text-on-surface font-body-sm text-body-sm">
+<input checked="" class="w-3.5 h-3.5 rounded text-primary" type="checkbox">
+<span>Vendor cert attached</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer text-on-surface font-body-sm text-body-sm opacity-60">
+<input class="w-3.5 h-3.5 rounded text-primary" type="checkbox">
+<span>Hazardous / MSDS (N/A)</span>
+</label>
+</div>
+<div class="flex flex-col gap-1 pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Receiver Discrepancy Note:</span>
+<p class="font-body-sm text-body-sm bg-surface-container-lowest p-2 rounded text-on-surface">
+                "2 sheets damaged during transit on pallet #2; vendor notified for immediate credit memo. Remaining 48 items undamaged and ready for putaway."
+              </p>
+</div>
+</div>
+</div>
+<!-- Sticky Operational Inspector Footer -->
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs w-full sm:w-auto">
+<button class="h-8 px-2.5 bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm rounded flex items-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm">save</span>
+<span>Save Draft</span>
+</button>
+<button class="h-8 px-2.5 bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm rounded flex items-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm">qr_code</span>
+<span>Print Barcodes (3)</span>
+</button>
+<button class="h-8 px-2.5 bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-title-sm text-title-sm rounded flex items-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm">add</span>
+<span>Add Item</span>
+</button>
+</div>
+<button class="h-9 px-space-lg bg-primary-container hover:bg-primary text-on-primary font-title-sm text-title-sm rounded flex items-center justify-center gap-1.5 w-full sm:w-auto shadow-md transition-colors" type="button">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span>Validate Receipt &amp; Increase Stock (+698 items)</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Barcode Scanner Modal (Interactive Component) -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4" id="barcodeModal">
+<div class="bg-surface-container-lowest rounded-xl shadow-xl w-full max-w-md p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">barcode_scanner</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Scan Inbound Pallet / ASN</span>
+</div>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" onclick="closeBarcodeModal()">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Point physical scanner at barcode label or enter the 12-digit ASN / Tracking code manually.
+      </p>
+<div class="flex flex-col gap-2">
+<input class="h-10 px-3 bg-surface-container-low rounded font-mono text-title-md text-on-surface focus:outline-none focus:bg-surface-container" id="scanInput" placeholder="Awaiting hardware wedge input..." type="text">
+<div class="flex items-center justify-between text-label-sm text-label-sm text-outline">
+<span>Supported: Code 128, GS1-128, QR Code</span>
+<span class="text-tertiary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Reader 1: Connected
+          </span>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-2">
+<button class="h-8 px-3 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm" onclick="closeBarcodeModal()">
+          Cancel
+        </button>
+<button class="h-8 px-4 rounded bg-primary-container hover:bg-primary text-on-primary font-title-sm text-title-sm" onclick="simulateScanSuccess()">
+          Simulate Scan (ASN-8839120)
+        </button>
+</div>
+</div>
+</div>
+<script>
+    function triggerBarcodeScanModal() {
+      const modal = document.getElementById('barcodeModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        const input = document.getElementById('scanInput');
+        if (input) input.focus();
+      }
+    }
+
+    function closeBarcodeModal() {
+      const modal = document.getElementById('barcodeModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function simulateScanSuccess() {
+      const input = document.getElementById('scanInput');
+      if (input) input.value = "ASN-8839120-PALLET-02";
+      setTimeout(() => {
+        closeBarcodeModal();
+      }, 300);
+    }
+
+    // Keyboard shortcut F2 listener
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'F2') {
+        e.preventDefault();
+        triggerBarcodeScanModal();
+      } else if (e.key === 'Escape') {
+        closeBarcodeModal();
+      }
+    });
+  </script>
+</div></main></div></body></html>

@@ -1,0 +1,672 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"background":"#faf8ff","on-secondary":"#ffffff","primary-container":"#1d4ed8","outline":"#747686","on-primary-fixed-variant":"#0039b5","secondary-fixed":"#d5e3fc","surface":"#faf8ff","primary":"#0037b0","on-error":"#ffffff","on-secondary-fixed-variant":"#3a485b","primary-fixed-dim":"#b7c4ff","error":"#ba1a1a","surface-container-highest":"#dae2fd","surface-container-high":"#e2e7ff","primary-fixed":"#dce1ff","tertiary-fixed-dim":"#68dba9","inverse-surface":"#283044","surface-container":"#eaedff","on-error-container":"#93000a","on-tertiary-container":"#76eab6","on-primary":"#ffffff","on-background":"#131b2e","error-container":"#ffdad6","outline-variant":"#c4c5d7","surface-tint":"#2151da","on-secondary-container":"#57657a","inverse-on-surface":"#eef0ff","on-secondary-fixed":"#0d1c2e","surface-bright":"#faf8ff","inverse-primary":"#b7c4ff","on-tertiary-fixed-variant":"#005137","secondary-fixed-dim":"#b9c7df","surface-variant":"#dae2fd","secondary":"#515f74","surface-container-lowest":"#ffffff","tertiary":"#004f35","on-primary-container":"#cad3ff","on-tertiary-fixed":"#002114","on-primary-fixed":"#001551","tertiary-fixed":"#85f8c4","on-surface":"#131b2e","surface-container-low":"#f2f3ff","on-tertiary":"#ffffff","surface-dim":"#d2d9f4","on-surface-variant":"#434655","tertiary-container":"#006948","secondary-container":"#d5e3fc"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin":"1rem","space-md":"0.5rem","space-sm":"0.25rem","space-xl":"1rem","space-lg":"0.75rem","space-xs":"0.125rem","gutter":"0.75rem"},"fontFamily":{"headline-lg":["Inter"],"title-md":["Inter"],"label-sm":["Inter"],"title-sm":["Inter"],"label-md":["Inter"],"headline-sm":["Inter"],"headline-md":["Inter"],"tabular-kpi":["Inter"],"tabular-body":["Inter"],"body-sm":["Inter"],"body-md":["Inter"]},"fontSize":{"headline-lg":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"title-md":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"-0.005em","fontWeight":"600"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.04em","fontWeight":"600"}],"title-sm":["0.8125rem",{"lineHeight":"1.125rem","letterSpacing":"0em","fontWeight":"600"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"600"}],"headline-sm":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-md":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"600"}],"tabular-kpi":["1.75rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"700"}],"tabular-body":["0.8125rem",{"lineHeight":"1.125rem","letterSpacing":"-0.005em","fontWeight":"500"}],"body-sm":["0.8125rem",{"lineHeight":"1.125rem","letterSpacing":"0em","fontWeight":"400"}],"body-md":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"400"}]}}}</script></head><body class="bg-surface-container-low font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest border-r border-outline-variant z-50 flex flex-col justify-between select-none"><div class="flex flex-col min-h-0"><div class="h-14 px-4 flex items-center justify-between border-b border-outline-variant bg-surface-container-lowest"><div class="flex items-center gap-space-md min-w-0"><img alt="StockSense Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XifryD1c-SkFjJE1VkwG_RHRWu0KOzpsgN2mfbO40fg6qxuWlsw3nR9pYLCQZviZs_e7RiM5SCx7cetjSWz3-6jv-Xw8J4HPzKH6pXxO4dymnLalYEmZxt717idCGla_1nb4RkQBr57XtESGfsMJp7qwOkRTkMeY6JkxAXMI9yDapDoMPfDUSgRfDzUtyndy41ROzgF1zXYFA682NquJvrH5Xv3mK_9eOQ91JmG4fjB7q53otWVZEvc08"><div class="flex flex-col min-w-0"><span class="font-title-sm text-title-sm text-on-surface truncate">StockSense</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">Enterprise IMS</span></div></div></div><div class="px-4 py-space-md border-b border-outline-variant bg-surface-container-low"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-sm text-primary">warehouse</span><span class="font-label-md text-label-md text-on-surface font-semibold">WH-01</span></div><span class="font-label-sm text-label-sm bg-secondary-container text-on-secondary-container px-space-sm py-space-xs rounded">Main Facility</span></div></div><div class="flex-1 overflow-y-auto px-3 py-space-md space-y-space-lg"><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-title-sm"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded transition-colors text-on-surface-variant" data-path="dashboard" href="#"><span class="material-symbols-outlined text-base">dashboard</span><span>Dashboard</span></a></nav><div class="space-y-space-xs"><div class="px-space-md py-space-xs font-label-sm text-label-sm uppercase text-outline tracking-wider font-semibold">Inventory</div><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-title-sm"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="products" href="#"><span class="material-symbols-outlined text-base">inventory_2</span><span>Products</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="stock-overview" href="#"><span class="material-symbols-outlined text-base">monitoring</span><span>Stock Overview</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-md py-space-xs font-label-sm text-label-sm uppercase text-outline tracking-wider font-semibold">Operations</div><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-title-sm"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="receipts" href="#"><span class="material-symbols-outlined text-base">call_received</span><span>Receipts</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="deliveries" href="#"><span class="material-symbols-outlined text-base">local_shipping</span><span>Deliveries</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="transfers" href="#"><span class="material-symbols-outlined text-base">sync_alt</span><span>Transfers</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="adjustments" href="#"><span class="material-symbols-outlined text-base">tune</span><span>Adjustments</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="move-history" href="#"><span class="material-symbols-outlined text-base">receipt_long</span><span>Move History</span></a></nav></div><div class="space-y-space-xs"><div class="px-space-md py-space-xs font-label-sm text-label-sm uppercase text-outline tracking-wider font-semibold">Settings</div><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-title-sm"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="warehouses" href="#"><span class="material-symbols-outlined text-base">store</span><span>Warehouses</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant font-title-sm text-title-sm hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-base">settings</span><span>Settings</span></a></nav></div></div></div><div class="p-3 border-t border-outline-variant bg-surface-container-lowest"><div class="flex items-center justify-between gap-space-sm p-space-sm rounded hover:bg-surface-container-low transition-colors"><div class="flex items-center gap-space-sm min-w-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKDUZgZKMdPT-CFzSWlMKR8BQuTj8Qz1Myp8wtqRRXc-TqrhEvbdgyIqXc0kWrZvJk9qN9Sq7SUfTnBqij8gdVYegsqoAtqbz1eS0HdThiILORSSe7kakWdPvOSFRHVy3d6IGs3sQAC6FOh3XhlT94iEGd4vXGyriMfPgKRSXyhWVt0FAyTa2Di5Fz-n6IXQjKQLrrL0SNHJMjygeYOuLvzdMUWGdRjzdoxx4C4Uw5PqP-bpHU4yIe"><div class="flex flex-col min-w-0"><span class="font-title-sm text-title-sm text-on-surface truncate leading-tight">Marcus Vance</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Operations Manager</span></div></div><button class="p-1 text-on-surface-variant hover:text-error hover:bg-error-container rounded transition-colors" title="Sign out" type="button"><span class="material-symbols-outlined text-base">logout</span></button></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-container-lowest border-b border-outline-variant z-40 px-6 flex items-center justify-between"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant"><span class="material-symbols-outlined text-sm">domain</span><span class="text-outline">StockSense</span><span class="text-outline">/</span><button class="flex items-center gap-space-xs font-title-sm text-title-sm text-on-surface hover:text-primary transition-colors"><span>All Locations / Main Warehouse</span><span class="material-symbols-outlined text-sm">expand_more</span></button></div></div><div class="flex-1 max-w-md mx-6"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-2.5 text-base text-outline pointer-events-none">search</span><input class="w-full h-8 pl-8 pr-12 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:bg-surface-container-lowest" placeholder="Search SKU, Product, PO#, or Delivery..." type="text"><div class="absolute right-2 flex items-center gap-space-xs pointer-events-none"><kbd class="font-label-sm text-label-sm bg-surface-container px-1 py-0.5 rounded text-on-surface-variant border border-outline-variant">⌘K</kbd></div></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-2 py-1 rounded bg-surface-container font-label-sm text-label-sm text-tertiary font-medium"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container animate-pulse"></span><span>Sync: Live 1s ago</span></div><div class="h-4 w-px bg-outline-variant"></div><button class="relative p-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded transition-colors" title="Notifications" type="button"><span class="material-symbols-outlined text-base">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-primary ring-2 ring-surface-container-lowest"></span></button><button class="h-8 px-space-lg bg-primary-container hover:bg-primary text-on-primary font-title-sm text-title-sm rounded flex items-center gap-space-xs transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-base">add</span><span>New Action</span><span class="material-symbols-outlined text-xs">arrow_drop_down</span></button></div></header><main class="w-full pt-14 bg-surface-container-low min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive Script to Synchronize Sidebar Nav State -->
+<script>
+    (function() {
+      const navLinks = document.querySelectorAll('aside nav a[data-path]');
+      navLinks.forEach(link => {
+        if (link.getAttribute('data-path') === 'transfers') {
+          link.className = 'flex items-center gap-space-md px-space-md py-space-sm rounded font-title-sm text-title-sm bg-primary-container text-on-primary transition-colors';
+        } else {
+          link.className = 'flex items-center gap-space-md px-space-md py-space-sm rounded font-title-sm text-title-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors';
+        }
+      });
+    })();
+  </script>
+<!-- Main Content Inner Wrapper -->
+<div class="p-6 space-y-5">
+<!-- Page Header Area -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Internal Stock Transfers</h1>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm font-label-sm bg-surface-container-high text-on-surface-variant">WH Internal Move Mode</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Move inventory between warehouses, zones, aisles, and bin locations without altering overall enterprise valuation.
+        </p>
+</div>
+<!-- Action Button Group -->
+<div class="flex items-center gap-2 flex-wrap">
+<button class="h-8 px-3 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container font-title-sm text-title-sm flex items-center gap-1.5 transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm text-primary">barcode_scanner</span>
+<span>Quick Transfer Scanner (F3)</span>
+</button>
+<button class="h-8 px-3 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container font-title-sm text-title-sm flex items-center gap-1.5 transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm text-secondary">download</span>
+<span>Export Transfer Manifests</span>
+</button>
+<button class="h-8 px-3.5 rounded bg-primary-container hover:bg-primary text-on-primary font-title-sm text-title-sm flex items-center gap-1.5 transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm">add</span>
+<span>+ New Transfer Order</span>
+</button>
+</div>
+</div>
+<!-- Operational Concept Banner -->
+<div class="bg-surface-container-highest/60 rounded p-3 flex items-start gap-3">
+<div class="p-1 rounded bg-primary/10 text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-base">swap_horiz</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="font-title-sm text-title-sm text-on-surface">Stock Relocation Principle</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          Internal transfers reallocate physical inventory locations (<span class="font-medium text-on-surface">From WH / Location → To WH / Location</span>). Total enterprise on-hand stock and ledger valuation remain balanced.
+        </p>
+</div>
+<div class="hidden lg:flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-lowest font-label-sm text-label-sm text-tertiary self-center shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>Ledger Integrity Verified</span>
+</div>
+</div>
+<!-- KPI Strip: 4 Metric Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest p-3.5 rounded shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Pending Transfers</span>
+<span class="p-1 rounded bg-amber-50 text-amber-700">
+<span class="material-symbols-outlined text-sm">pending_actions</span>
+</span>
+</div>
+<div class="mt-2">
+<div class="font-tabular-kpi text-tabular-kpi text-on-surface leading-none">6 Orders</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+<span>1,850 units awaiting relocation</span>
+</div>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest p-3.5 rounded shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">In-Transit</span>
+<span class="p-1 rounded bg-blue-50 text-primary-container">
+<span class="material-symbols-outlined text-sm">local_shipping</span>
+</span>
+</div>
+<div class="mt-2">
+<div class="font-tabular-kpi text-tabular-kpi text-on-surface leading-none">3 Active</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span>Inter-facility transit · ETA Today</span>
+</div>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest p-3.5 rounded shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Completed Today</span>
+<span class="p-1 rounded bg-emerald-50 text-tertiary">
+<span class="material-symbols-outlined text-sm">task_alt</span>
+</span>
+</div>
+<div class="mt-2">
+<div class="font-tabular-kpi text-tabular-kpi text-on-surface leading-none">18 Transfers</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>5,420 units relocated across 14 bins</span>
+</div>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest p-3.5 rounded shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Route Bottleneck / Delay</span>
+<span class="p-1 rounded bg-emerald-50 text-tertiary">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+</span>
+</div>
+<div class="mt-2">
+<div class="font-tabular-kpi text-tabular-kpi text-on-surface leading-none">0 Flagged</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>All staging zones clear</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Filter / Status Toolbar -->
+<div class="bg-surface-container-lowest p-3 rounded shadow-sm space-y-3">
+<div class="flex items-center justify-between gap-4 flex-wrap">
+<!-- Tabs -->
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded">
+<button class="px-3 py-1 rounded text-label-md font-label-md text-on-surface-variant hover:text-on-surface" type="button">
+            All Transfers <span class="ml-1 text-outline">27</span>
+</button>
+<button class="px-3 py-1 rounded text-label-md font-label-md text-on-surface-variant hover:text-on-surface" type="button">
+            Draft <span class="ml-1 text-outline">2</span>
+</button>
+<button class="px-3 py-1 rounded text-label-md font-label-md bg-surface-container-lowest text-primary shadow-xs" type="button">
+            Ready to Move <span class="ml-1 px-1.5 py-0.2 rounded bg-primary-fixed text-primary font-bold">6</span>
+</button>
+<button class="px-3 py-1 rounded text-label-md font-label-md text-on-surface-variant hover:text-on-surface" type="button">
+            In-Transit <span class="ml-1 text-outline">3</span>
+</button>
+<button class="px-3 py-1 rounded text-label-md font-label-md text-on-surface-variant hover:text-on-surface" type="button">
+            Completed <span class="ml-1 text-outline">16</span>
+</button>
+<button class="px-3 py-1 rounded text-label-md font-label-md text-on-surface-variant hover:text-on-surface" type="button">
+            Canceled <span class="ml-1 text-outline">0</span>
+</button>
+</div>
+<!-- Quick Info / Time Ref -->
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>Last bay cycle run: 4 mins ago</span>
+</div>
+</div>
+<!-- Controls Row -->
+<div class="flex items-center justify-between gap-3 flex-wrap">
+<div class="flex items-center gap-2 flex-1 min-w-[280px]">
+<div class="relative w-full max-w-sm">
+<span class="material-symbols-outlined absolute left-2.5 top-2 text-sm text-outline pointer-events-none">search</span>
+<input class="w-full h-8 pl-8 pr-3 bg-surface-container-low rounded font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest shadow-2xs" placeholder="Search Transfer ID, SKU, Product, or Operator..." type="text" value="TR-2024-0045">
+</div>
+<div class="relative">
+<select class="h-8 pl-2.5 pr-7 bg-surface-container-low rounded font-title-sm text-title-sm text-on-surface appearance-none focus:outline-none cursor-pointer">
+<option>From: All Facilities</option>
+<option>From: WH-01 Main Facility</option>
+<option>From: WH-02 North Bay Annex</option>
+<option>From: WH-03 Bulk Storage</option>
+</select>
+<span class="material-symbols-outlined absolute right-1.5 top-2 text-sm text-outline pointer-events-none">expand_more</span>
+</div>
+<div class="relative">
+<select class="h-8 pl-2.5 pr-7 bg-surface-container-low rounded font-title-sm text-title-sm text-on-surface appearance-none focus:outline-none cursor-pointer">
+<option>To: All Facilities</option>
+<option>To: WH-01 Main Facility</option>
+<option>To: WH-02 North Bay Annex</option>
+<option>To: WH-03 Bulk Storage</option>
+</select>
+<span class="material-symbols-outlined absolute right-1.5 top-2 text-sm text-outline pointer-events-none">expand_more</span>
+</div>
+<div class="relative">
+<button class="h-8 px-2.5 bg-surface-container-low rounded font-title-sm text-title-sm text-on-surface flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-sm text-outline">calendar_today</span>
+<span>Today: Nov 14, 2024</span>
+<span class="material-symbols-outlined text-sm text-outline">expand_more</span>
+</button>
+</div>
+</div>
+<button class="h-8 px-2.5 text-on-surface-variant hover:text-on-surface font-title-sm text-title-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">restart_alt</span>
+<span>Clear Filters</span>
+</button>
+</div>
+</div>
+<!-- Main Content Split 2-Column Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
+<!-- Left Column (approx 60% -> 7 Cols in 12-col grid) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded shadow-sm overflow-hidden flex flex-col">
+<!-- Table Header Info Bar -->
+<div class="px-4 py-3 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface">Transfer Orders Queue</span>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-surface-container-highest text-on-surface-variant">5 showing</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Reload queue" type="button">
+<span class="material-symbols-outlined text-sm">refresh</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Customize columns" type="button">
+<span class="material-symbols-outlined text-sm">view_column</span>
+</button>
+</div>
+</div>
+<!-- High-Density Data Table -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/70 h-8 font-label-sm text-label-sm uppercase tracking-wider text-outline select-none">
+<th class="w-8 px-3 text-center">
+<input class="w-3.5 h-3.5 rounded bg-surface-container-lowest text-primary-container cursor-pointer" type="checkbox">
+</th>
+<th class="px-3 py-1 font-semibold">TRANSFER # / REF</th>
+<th class="px-3 py-1 font-semibold">SOURCE LOCATION</th>
+<th class="px-3 py-1 font-semibold">DESTINATION</th>
+<th class="px-3 py-1 font-semibold">ITEMS / UNITS</th>
+<th class="px-3 py-1 font-semibold">VEHICLE / METHOD</th>
+<th class="px-3 py-1 font-semibold">STATUS</th>
+<th class="w-12 px-2 py-1 text-right">ACT</th>
+</tr>
+</thead>
+<tbody class="font-tabular-body text-tabular-body divide-y-0">
+<!-- Row 1: TR-2024-0045 (Selected Row) -->
+<tr class="bg-primary/5 hover:bg-primary/10 transition-colors cursor-pointer group">
+<td class="px-3 py-2 text-center">
+<input checked="" class="w-3.5 h-3.5 rounded bg-surface-container-lowest text-primary cursor-pointer" type="checkbox">
+</td>
+<td class="px-3 py-2">
+<div class="font-title-sm text-title-sm text-primary font-bold">TR-2024-0045</div>
+<div class="font-label-sm text-label-sm text-outline">PRIO-NORMAL</div>
+</td>
+<td class="px-3 py-2">
+<div class="font-title-sm text-title-sm text-on-surface">WH-01 Main Facility</div>
+<div class="font-label-sm text-label-sm text-outline">Bulk Storage Bay 02</div>
+</td>
+<td class="px-3 py-2">
+<div class="font-title-sm text-title-sm text-on-surface">WH-01 Main Facility</div>
+<div class="font-label-sm text-label-sm text-outline">Rack A-04 Aisle 2</div>
+</td>
+<td class="px-3 py-2">
+<div class="text-on-surface font-semibold">2 Lines</div>
+<div class="font-label-sm text-label-sm text-outline">1,250 kg</div>
+</td>
+<td class="px-3 py-2">
+<div class="text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary">forklift</span>
+<span class="truncate">Forklift FL-04</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline">Internal Move</div>
+</td>
+<td class="px-3 py-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-label-sm font-label-sm bg-amber-50 text-amber-800">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+<span>Ready to Move</span>
+</span>
+</td>
+<td class="px-2 py-2 text-right">
+<button class="p-1 text-on-surface-variant hover:text-on-surface rounded hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-base">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: TR-2024-0044 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer group">
+<td class="px-3 py-2 text-center">
+<input class="w-3.5 h-3.5 rounded bg-surface-container-lowest text-primary cursor-pointer" type="checkbox">
+</td>
+<td class="px-3 py-2">
+<div class="font-title-sm text-title-sm text-on-surface font-semibold">TR-2024-0044</div>
+<div class="font-label-sm text-label-sm text-outline">INTER-FACILITY</div>
+</td>
+<td class="px-3 py-2">
+<div class="font-title-sm text-title-sm text-on-surface">WH-01 Main Facility</div>
+<div class="font-label-sm text-label-sm text-outline">Rack A-04</div>
+</td>
+<td class="px-3 py-2">
+<div class="font-title-sm text-title-sm text-on-surface">North Bay Annex WH-02</div>
+<div class="font-label-sm text-label-sm text-outline">Cutting Bay C-01</div>
+</td>
+<td class="px-3 py-2">
+<div class="text-on-surface font-semibold">1 Line</div>
+<div class="font-label-sm text-label-sm text-outline">250 kg (Steel Rods)</div>
+</td>
+<td class="px-3 py-2">
+<div class="text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary">local_shipping</span>
+<span class="truncate">Shuttle Van #3</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline">Inter-Warehouse</div>
+</td>
+<td class="px-3 py-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-label-sm font-label-sm bg-blue-50 text-blue-800">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+<span>In-Transit</span>
+</span>
+</td>
+<td class="px-2 py-2 text-right">
+<button class="p-1 text-on-surface-variant hover:text-on-surface rounded hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-base">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: TR-2024-0043 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer group">
+<td class="px-3 py-2 text-center">
+<input class="w-3.5 h-3.5 rounded bg-surface-container-lowest text-primary cursor-pointer" type="checkbox">
+</td>
+<td class="px-3 py-2">
+<div class="font-title-sm text-title-sm text-on-surface font-semibold">TR-2024-0043</div>
+<div class="font-label-sm text-label-sm text-outline">CLEANROOM-EXP</div>
+</td>
+<td class="px-3 py-2">
+<div class="font-title-sm text-title-sm text-on-surface">WH-01 Receiving Dock 02</div>
+<div class="font-label-sm text-label-sm text-outline">Staging Zone 1</div>
+</td>
+<td class="px-3 py-2">
+<div class="font-title-sm text-title-sm text-on-surface">WH-01 Cleanroom A</div>
+<div class="font-label-sm text-label-sm text-outline">Bin CR-08</div>
+</td>
+<td class="px-3 py-2">
+<div class="text-on-surface font-semibold">3 Lines</div>
+<div class="font-label-sm text-label-sm text-outline">450 units</div>
+</td>
+<td class="px-3 py-2">
+<div class="text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary">drag_handle</span>
+<span class="truncate">Pallet Jack</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline">Manual Transfer</div>
+</td>
+<td class="px-3 py-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-label-sm font-label-sm bg-emerald-50 text-emerald-800">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+<span>Completed</span>
+</span>
+</td>
+<td class="px-2 py-2 text-right">
+<button class="p-1 text-on-surface-variant hover:text-on-surface rounded hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-base">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: TR-2024-0042 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer group">
+<td class="px-3 py-2 text-center">
+<input class="w-3.5 h-3.5 rounded bg-surface-container-lowest text-primary cursor-pointer" type="checkbox">
+</td>
+<td class="px-3 py-2">
+<div class="font-title-sm text-title-sm text-on-surface font-semibold">TR-2024-0042</div>
+<div class="font-label-sm text-label-sm text-outline">HIGH-BAY-PUT</div>
+</td>
+<td class="px-3 py-2">
+<div class="font-title-sm text-title-sm text-on-surface">WH-01 Bin E-12</div>
+<div class="font-label-sm text-label-sm text-outline">Spool Rack Section</div>
+</td>
+<td class="px-3 py-2">
+<div class="font-title-sm text-title-sm text-on-surface">WH-03 Bulk Storage</div>
+<div class="font-label-sm text-label-sm text-outline">High Bay 01</div>
+</td>
+<td class="px-3 py-2">
+<div class="text-on-surface font-semibold">1 Line</div>
+<div class="font-label-sm text-label-sm text-outline">800 m (Copper Wire)</div>
+</td>
+<td class="px-3 py-2">
+<div class="text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary">forklift</span>
+<span class="truncate">Reach Truck RT-02</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline">Heavy Lift</div>
+</td>
+<td class="px-3 py-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-label-sm font-label-sm bg-emerald-50 text-emerald-800">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+<span>Completed</span>
+</span>
+</td>
+<td class="px-2 py-2 text-right">
+<button class="p-1 text-on-surface-variant hover:text-on-surface rounded hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-base">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 5: TR-2024-0041 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer group">
+<td class="px-3 py-2 text-center">
+<input class="w-3.5 h-3.5 rounded bg-surface-container-lowest text-primary cursor-pointer" type="checkbox">
+</td>
+<td class="px-3 py-2">
+<div class="font-title-sm text-title-sm text-on-surface font-semibold">TR-2024-0041</div>
+<div class="font-label-sm text-label-sm text-outline">FREIGHT-LTL</div>
+</td>
+<td class="px-3 py-2">
+<div class="font-title-sm text-title-sm text-on-surface">North Bay Annex WH-02</div>
+<div class="font-label-sm text-label-sm text-outline">Zone C - Outbound</div>
+</td>
+<td class="px-3 py-2">
+<div class="font-title-sm text-title-sm text-on-surface">WH-01 Assembly Line</div>
+<div class="font-label-sm text-label-sm text-outline">Staging Platform B</div>
+</td>
+<td class="px-3 py-2">
+<div class="text-on-surface font-semibold">4 Lines</div>
+<div class="font-label-sm text-label-sm text-outline">320 units (Task Chairs)</div>
+</td>
+<td class="px-3 py-2">
+<div class="text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary">local_shipping</span>
+<span class="truncate">Freight LTL #12</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline">Inter-Facility</div>
+</td>
+<td class="px-3 py-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-label-sm font-label-sm bg-amber-50 text-amber-800">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+<span>Ready to Move</span>
+</span>
+</td>
+<td class="px-2 py-2 text-right">
+<button class="p-1 text-on-surface-variant hover:text-on-surface rounded hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-base">chevron_right</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="px-4 py-2.5 bg-surface-container-low flex items-center justify-between mt-auto">
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+            Showing <span class="font-semibold text-on-surface">1-5</span> of <span class="font-semibold text-on-surface">27</span> transfers
+          </div>
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Rows per page: 10</span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-sm">first_page</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<span class="px-2 py-0.5 text-label-sm font-label-sm font-bold bg-surface-container-lowest rounded">1</span>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">last_page</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (approx 40% -> 5 Cols in 12-col grid): Active Transfer Detail -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded shadow-sm overflow-hidden flex flex-col space-y-4 p-4">
+<!-- Detail Panel Top Header -->
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">TR-2024-0045</span>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-primary/10 text-primary font-semibold">
+                INTRA-WAREHOUSE RELOCATION
+              </span>
+</div>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<span>Priority: <strong class="text-on-surface">Standard Replenishment</strong></span>
+<span>•</span>
+<span>Created Today, 08:30 AM</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="p-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Print Move Slip" type="button">
+<span class="material-symbols-outlined text-base">print</span>
+</button>
+<button class="p-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Audit Log" type="button">
+<span class="material-symbols-outlined text-base">history</span>
+</button>
+</div>
+</div>
+<!-- Stepper Indicator -->
+<div class="bg-surface-container-low p-2.5 rounded">
+<div class="flex items-center justify-between text-label-sm font-label-sm mb-2">
+<div class="flex items-center gap-1 text-tertiary font-bold">
+<span class="material-symbols-outlined text-xs">check_circle</span>
+<span>1. Draft Approved</span>
+</div>
+<div class="flex items-center gap-1 text-primary font-bold">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>2. In Relocation (Active)</span>
+</div>
+<div class="flex items-center gap-1 text-outline">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+<span>3. Putaway Confirmed</span>
+</div>
+</div>
+<!-- Progress bar -->
+<div class="w-full bg-surface-container-highest h-1 rounded overflow-hidden">
+<div class="bg-primary h-full w-2/3"></div>
+</div>
+</div>
+<!-- Visual Transfer Route Diagram -->
+<div class="bg-surface-container-low/60 p-3 rounded space-y-2.5">
+<div class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Physical Move Trajectory</div>
+<div class="space-y-2">
+<!-- Source Node -->
+<div class="flex items-start gap-2.5 bg-surface-container-lowest p-2.5 rounded shadow-2xs">
+<div class="p-1.5 rounded bg-surface-container text-secondary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-base">output</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">FROM SOURCE</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant">WH-01 Main</span>
+</div>
+<div class="font-title-sm text-title-sm text-on-surface font-bold mt-0.5">Bulk Storage Bay 02</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Sector B, Ground Level · Heavy Pallet Staging</div>
+</div>
+</div>
+<!-- Intermediary Transit Method Indicator -->
+<div class="flex items-center justify-between px-3 py-1 bg-surface-container-lowest/80 rounded font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">forklift</span>
+<span>Transferred via: <strong>Forklift FL-04</strong></span>
+</div>
+<div>Handler: <strong>Dave Kowalski (#OP-441)</strong></div>
+</div>
+<!-- Destination Node -->
+<div class="flex items-start gap-2.5 bg-surface-container-lowest p-2.5 rounded shadow-2xs">
+<div class="p-1.5 rounded bg-primary/10 text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-base">move_to_inbox</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary uppercase font-semibold">TO DESTINATION</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-primary-fixed text-primary font-bold">WH-01 Main</span>
+</div>
+<div class="font-title-sm text-title-sm text-on-surface font-bold mt-0.5">Rack A-04, Aisle 2, Bin 01</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Active Assembly Feed Buffer · Shelving Tier 1</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Stock Reservation & Availability Check -->
+<div class="bg-emerald-50/70 p-2.5 rounded flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-tertiary">verified</span>
+<div>
+<div class="font-title-sm text-title-sm text-tertiary font-bold">Stock Balance Check: PASS</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Allocations pre-reserved in source bin. Ledger balanced.</div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-emerald-100 text-tertiary font-semibold">Zero Variance</span>
+</div>
+<!-- Relocation Line Items (Manifest) -->
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">Relocation Line Items (2)</span>
+<span class="font-label-sm text-label-sm text-outline">All Items Barcode Verified</span>
+</div>
+<div class="space-y-2">
+<!-- Line 1 -->
+<div class="bg-surface-container-low p-2.5 rounded space-y-1.5">
+<div class="flex items-start justify-between gap-2">
+<div class="min-w-0">
+<div class="font-title-sm text-title-sm text-on-surface font-semibold">Industrial Steel Rods 250mm</div>
+<div class="font-label-sm text-label-sm text-outline">SKU-ST-9921 · High-Grade Alloy</div>
+</div>
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-tertiary bg-emerald-50 px-2 py-0.5 rounded font-semibold shrink-0">
+<span class="material-symbols-outlined text-xs">check</span>
+<span>Scanned &amp; Loaded</span>
+</span>
+</div>
+<!-- Metric comparison strip -->
+<div class="grid grid-cols-3 gap-2 pt-1 text-label-sm font-label-sm bg-surface-container-lowest p-2 rounded">
+<div>
+<div class="text-outline uppercase text-[0.625rem]">Source Bay 02</div>
+<div class="font-tabular-body text-tabular-body font-semibold text-on-surface mt-0.5">3,400 kg</div>
+</div>
+<div>
+<div class="text-primary uppercase text-[0.625rem] font-bold">Transfer Qty</div>
+<div class="font-tabular-body text-tabular-body font-bold text-primary mt-0.5">500 kg</div>
+</div>
+<div>
+<div class="text-outline uppercase text-[0.625rem]">Projected Rack A-04</div>
+<div class="font-tabular-body text-tabular-body font-semibold text-on-surface mt-0.5">1,240 → <strong class="text-tertiary">1,740 kg</strong></div>
+</div>
+</div>
+</div>
+<!-- Line 2 -->
+<div class="bg-surface-container-low p-2.5 rounded space-y-1.5">
+<div class="flex items-start justify-between gap-2">
+<div class="min-w-0">
+<div class="font-title-sm text-title-sm text-on-surface font-semibold">Stainless Hex Bolts M8x40mm</div>
+<div class="font-label-sm text-label-sm text-outline">SKU-BT-8832 · Fasteners &amp; Hardware</div>
+</div>
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-tertiary bg-emerald-50 px-2 py-0.5 rounded font-semibold shrink-0">
+<span class="material-symbols-outlined text-xs">check</span>
+<span>Scanned &amp; Loaded</span>
+</span>
+</div>
+<!-- Metric comparison strip -->
+<div class="grid grid-cols-3 gap-2 pt-1 text-label-sm font-label-sm bg-surface-container-lowest p-2 rounded">
+<div>
+<div class="text-outline uppercase text-[0.625rem]">Source Bay 02</div>
+<div class="font-tabular-body text-tabular-body font-semibold text-on-surface mt-0.5">14,500 pcs</div>
+</div>
+<div>
+<div class="text-primary uppercase text-[0.625rem] font-bold">Transfer Qty</div>
+<div class="font-tabular-body text-tabular-body font-bold text-primary mt-0.5">750 pcs</div>
+</div>
+<div>
+<div class="text-outline uppercase text-[0.625rem]">Projected Shelf 01</div>
+<div class="font-tabular-body text-tabular-body font-semibold text-on-surface mt-0.5">120 → <strong class="text-tertiary">870 pcs</strong></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Operator & Equipment Assignment -->
+<div class="bg-surface-container-low p-2.5 rounded space-y-1.5 text-body-sm font-body-sm">
+<div class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Assignment &amp; Dispatch Notes</div>
+<div class="grid grid-cols-2 gap-2">
+<div>
+<span class="text-outline text-label-sm font-label-sm block">Assigned Handler:</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Dave Kowalski (ID: #OP-441)</span>
+</div>
+<div>
+<span class="text-outline text-label-sm font-label-sm block">Transport Unit:</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Raymond Reach Forklift #4</span>
+</div>
+</div>
+<div class="pt-1">
+<span class="text-outline text-label-sm font-label-sm block">Transfer Reason:</span>
+<span class="text-on-surface">Assembly Line Replenishment &amp; Reorder Threshold Buffer</span>
+</div>
+</div>
+<!-- Execution Action Buttons -->
+<div class="pt-2 space-y-2 mt-auto">
+<div class="flex items-center gap-2">
+<button class="flex-1 h-8 px-3 rounded bg-surface-container text-on-surface hover:bg-surface-container-high font-title-sm text-title-sm flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">receipt</span>
+<span>Print Transfer Slip</span>
+</button>
+<button class="h-8 px-3 rounded bg-error-container text-error hover:bg-error-container/80 font-title-sm text-title-sm flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">report_problem</span>
+<span>Report Issue</span>
+</button>
+</div>
+<button class="w-full h-10 px-4 rounded bg-primary hover:bg-primary/90 text-on-primary font-title-md text-title-md flex items-center justify-center gap-2 transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span>Validate Transfer &amp; Update Bin Locations</span>
+</button>
+<div class="text-center font-label-sm text-label-sm text-outline">
+            Executing will instantaneously credit destination bin and debit source bin in Stock Ledger.
+          </div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>
